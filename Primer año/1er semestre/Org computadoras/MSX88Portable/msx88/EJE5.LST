@@ -1,0 +1,43 @@
+
+								p gina: 1 
+
+ Listado Fuente: eje5.LST
+ Programa Fuente en: eje5.ASM
+ Fecha: Wed Jun 22 17:19:15 2022
+
+ ÚDir.ÚCodigo maquina	 Linea¿	ÚCodigo en lenguaje ensamble
+
+			      1	ORG 1000H
+ 1000 80		      2	NUM0 DB 80h
+ 1001 C8		      3	NUM1 DB 200
+ 1002 FF		      4	NUM2 DB -1
+ 1003 7F		      5	BYTE0 DB 01111111B
+ 1004 AA		      6	BYTE1 DB 10101010B
+			      7	ORG 2000H
+Aviso: Directiva ORG ignorada..
+			      8	ORG 2000H
+ 2000 8A 06 00 10	      9	 MOV AL, NUM0
+ 2004 02 C0		     10	 ADD AL, AL
+ 2006 FE 06 01 10	     11	 INC NUM1
+ 200A 8A 3E 01 10	     12	 MOV BH, NUM1
+ 200E 8A DF		     13	 MOV BL, BH
+ 2010 FE CB		     14	 DEC BL
+ 2012 2A DF		     15	 SUB BL, BH
+ 2014 8A 2E 04 10	     16	 MOV CH, BYTE1
+ 2018 22 2E 03 10	     17	 AND CH, BYTE0
+ 201C F6 16 03 10	     18	 NOT BYTE0
+ 2020 0A 2E 03 10	     19	 OR CH, BYTE0
+ 2024 80 F5 FF		     20	 XOR CH, 11111111B
+ 2027 F4		     21	 HLT
+			     22	 END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ NUM0    	Byte		1000h
+ NUM1    	Byte		1001h
+ NUM2    	Byte		1002h	No usado
+ BYTE0   	Byte		1003h
+ BYTE1   	Byte		1004h

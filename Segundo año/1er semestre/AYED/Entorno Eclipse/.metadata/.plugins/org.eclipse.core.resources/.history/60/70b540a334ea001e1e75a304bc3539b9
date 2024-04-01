@@ -1,0 +1,31 @@
+package TP1_8;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Queue<T> extends Sequence {
+	private List<T> data;
+	
+	public Queue() {
+		this.data = new ArrayList<T>();
+	}
+	public void enqueue(T dato) {
+		data.add(dato);
+	}
+	public T dequeue() {
+		
+	}
+	public T head() {
+		
+	}
+	public boolean isEmpty() {
+		
+	}
+	
+	public int size() {
+		
+	}
+	public toString() {
+		
+	}
+}

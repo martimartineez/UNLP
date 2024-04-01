@@ -1,0 +1,27 @@
+package TP1_3;
+
+public class Test {
+public static void main(String[] args) {
+	Estudiante es1=new Estudiante();
+	es1.setApellido("Diaz");
+	es1.setNombre("Ana");
+	es1.setComision("nerds");
+	es1.setDireccion("calle 1254 645");
+	es1.setEmail("ana@gmail.com");
+	Estudiante es2=new Estudiante();
+	es2.setApellido("perez");
+	es2.setNombre("alfredo");
+	es2.setComision("meh");
+	es2.setDireccion("calle 222");
+	es2.setEmail("fredy@gmail.com");
+	Estudiante []estudiantes=new Estudiante[2];
+	
+	Profesor pro1=new Profesor();
+	
+	Profesor pro2=new Profesor();
+	
+	Profesor pro3=new Profesor();
+	
+	Profesor []profesores=new Profesor[3];
+}
+}

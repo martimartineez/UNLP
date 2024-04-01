@@ -1,0 +1,34 @@
+package ar.edu.info.unlp.ejercicio1;
+import java.util.List;
+import java.util.ArrayList;
+
+public class Twitter {
+private List<Usuario> usuarios = new ArrayList<>();
+	
+	public Twitter() {
+		
+		}
+	public Usuario agregarUsuario(Usuario usuario) {
+		if (this.usuarios.stream().anyMatch(user -> user.soyYo(usuario.getNombre()))) {
+			return null;
+		}
+		else {
+			
+			this.usuarios.add(usuario);
+			return usuario;
+			
+		}
+		
+	}
+	public Usuario eliminarUsuario(String nombre) {
+		Usuario usus=this.usuarios.stream().filter(usu -> usu.soyYo(nombre)).findFirst().orElse(null);
+		if (usus!=null){
+			usus.eliminarTweets();
+			this.usuarios.remove(usus);
+			return usus;
+		}
+		else {
+			return null;
+		}
+	}
+}

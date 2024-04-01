@@ -1,0 +1,61 @@
+programa ejer5
+procesos
+  proceso tomarFlores
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+  fin
+  proceso limpiar20flores
+  comenzar
+    repetir 20
+      tomarFlores
+      mover
+    tomarFlores
+  fin
+  proceso tomarPapeles
+  comenzar
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+  fin
+  proceso limpiar20papeles
+  comenzar
+    repetir 20
+      tomarPapeles
+      mover
+    tomarPapeles
+  fin
+areas
+  ciudad : AreaC(1,1,100,100)
+robots
+  robot impares
+  comenzar
+    derecha
+    limpiar20flores
+    Pos((PosAv)-20,(PosCa)-5)
+    limpiar20flores
+    mientras HayFlorEnLaBolsa
+      depositarFlor
+  fin
+  robot pares
+  comenzar
+    limpiar20papeles
+    Pos((PosAv+5),(PosCa)-20)
+    limpiar20papeles
+    mientras HayPapelEnLaBolsa
+      depositarPapel
+  fin
+variables
+  robot1 :impares
+  robot2: pares
+  robot3: impares
+  robot4 : pares
+comenzar
+  AsignarArea(robot1,ciudad)
+  AsignarArea(robot2,ciudad)
+  AsignarArea(robot3,ciudad)
+  AsignarArea(robot4,ciudad)
+  Iniciar(robot1,1,80)
+  Iniciar(robot2,75,80)
+  Iniciar(robot3,80,15)
+  Iniciar(robot4,10,1)
+fin

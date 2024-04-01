@@ -1,0 +1,26 @@
+.data
+A: .word 2
+B: .word 4
+C: .word 2
+D: .word 0
+
+.code
+ld r2, A(r0)
+ld r3, B(r0)
+ld r4, C(r0)
+dadd r5,r0,r0
+dadd r6,r0,r0
+
+dsub r6,r2,r3
+beqz r6, almacenar2
+dsub r6, r2,r4
+beqz r6, almacenar1
+dsub r6,r3,r4
+beqz r6,almacenar1
+
+almacenar2: 
+daddi r5,r5,2
+almacenar1:
+daddi r5,r5,1
+sd r5,D(r0)
+halt

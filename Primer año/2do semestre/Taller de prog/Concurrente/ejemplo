@@ -1,0 +1,16 @@
+programa ejercicio1
+procesos
+areas
+robots
+  robot tipo1
+    variables
+    
+    comenzar
+    
+    fin
+variables
+robot1: tipo1
+comenzar
+AsignarArea(robot1,areaC)
+iniciar(robot1,1,1)
+fin

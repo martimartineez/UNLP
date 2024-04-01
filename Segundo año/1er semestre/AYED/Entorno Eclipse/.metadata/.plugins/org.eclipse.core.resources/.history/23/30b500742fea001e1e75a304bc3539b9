@@ -1,0 +1,14 @@
+package TP1_2;
+import java.util.Scanner;
+public class Contador {
+	public static int[]	eneNumeros() {
+		Scanner s = new Scanner(System.in) ;
+		int aux=s.nextInt();
+		System.out.println("numero: "+aux);
+		int []arreglo=new int [aux];
+		for (int i=0;i<aux;i++) {
+			arreglo[i]=(i+1)*aux;
+		}
+		return arreglo;
+	}
+}

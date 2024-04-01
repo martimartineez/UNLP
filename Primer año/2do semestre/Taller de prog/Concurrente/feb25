@@ -1,0 +1,92 @@
+programa final25feb
+procesos
+  proceso juntarFlor(ES flor:numero)
+  comenzar
+    si(HayFlorEnLaEsquina)
+      tomarFlor
+      flor:=flor+1
+  fin
+areas
+  esquina: AreaPC(50,50,50,50)
+  ro1:AreaP(2,2,2,2)
+  ro2:AreaP(3,3,3,3)
+  ro3:AreaP(4,4,4,4)
+  ro4:AreaP(5,5,5,5)
+  jf:AreaP(1,1,1,1)
+robots
+  robot limpiador
+  variables
+    ok:boolean
+    flor:numero
+    av:numero
+    ca:numero
+    cont:numero
+  comenzar
+    ca:=PosCa
+    av:=PosAv
+    ok:=F
+    flor:=0
+    repetir 5
+      RecibirMensaje(ok,jefe)
+      si(ok=V)
+        BloquearEsquina(50,50)
+        Pos(50,50)
+        juntarFlor(flor)
+        Pos(av,ca)
+        LiberarEsquina(50,50)
+  fin
+  robot jefe
+  variables
+    elegir:numero
+  comenzar
+    repetir 5
+      Random(elegir,1,4)
+      Informar(elegir)
+      si (elegir=1)
+        EnviarMensaje(V,r1)
+        EnviarMensaje(F,r2)
+        EnviarMensaje(F,r3)
+        EnviarMensaje(F,r4)
+      sino
+        si (elegir=2)
+          EnviarMensaje(V,r2)
+          EnviarMensaje(F,r1)
+          EnviarMensaje(F,r3)
+          EnviarMensaje(F,r4)
+        sino
+          si (elegir=3)
+            EnviarMensaje(V,r3)
+            EnviarMensaje(F,r2)
+            EnviarMensaje(F,r1)
+            EnviarMensaje(F,r4)
+          sino
+            si (elegir=4)
+              EnviarMensaje(V,r4)
+              EnviarMensaje(F,r2)
+              EnviarMensaje(F,r3)
+              EnviarMensaje(F,r1)
+  fin
+variables
+  r1:limpiador
+  r2:limpiador
+  r3:limpiador
+  r4:limpiador
+  jefe:jefe
+comenzar
+  AsignarArea(r1,ro1)
+  AsignarArea(r1,esquina)
+  AsignarArea(r2,esquina)
+  AsignarArea(r2,ro2)
+  AsignarArea(r3,esquina)
+  AsignarArea(r3,ro3)
+  AsignarArea(r4,esquina)
+  AsignarArea(r4,ro4)
+  AsignarArea(jefe,jf)
+  Iniciar(jefe,1,1)
+  Iniciar(r1,2,2)
+  Iniciar(r2,3,3)
+  Iniciar(r3,4,4)
+  Iniciar(r4,5,5)
+fin
+
+

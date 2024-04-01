@@ -1,0 +1,17 @@
+package ar.edu.info.unlp.ejercicio1;
+
+public class Tweet implements Post{
+private String texto;
+private List<Post> retweets;
+	
+	public Tweet(String texto) {
+		this.texto = texto;
+	}
+
+	public void hicieronRetweet(Retweet unretweet) {
+		this.
+	}
+	public void wasEliminated() {
+		
+	}
+}

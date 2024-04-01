@@ -1,0 +1,23 @@
+package ar.edu.info.unlp.ejercicio1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Tweet implements Post{
+private String texto;
+private List<Post> retweets;
+	
+	public Tweet(String texto) {
+		this.texto = texto;
+		this.retweets=new ArrayList<>();
+	}
+
+	public void hicieronRetweet(Retweet unretweet) {
+		this.retweets.add(unretweet);
+	}
+	public Boolean wasEliminated() {
+		this.retweets.stream().forEach(re -> re.wasEliminated());
+		this.retweets.clear();
+		return this.retweets.isEmpty();
+	}
+}

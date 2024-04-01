@@ -1,0 +1,30 @@
+package ar.edu.info.unlp.ejercicio1;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class TestTwitter {
+	Twitter sis;
+	Usuario usu1,usu2,usu3,usu4;
+
+	@BeforeEach
+	void setUp() throws Exception {
+		sis=new Twitter();
+		usu1=new Usuario("Maria");
+		usu2=new Usuario("Maria");
+		usu3=new Usuario("Pedro");
+		usu4= new Usuario("Martin");
+		
+	}
+
+	
+	@Test
+	void testAgregarUsuario() {
+		assertEquals(usu1,sis.agregarUsuario("Maria"));
+		
+	}
+
+}

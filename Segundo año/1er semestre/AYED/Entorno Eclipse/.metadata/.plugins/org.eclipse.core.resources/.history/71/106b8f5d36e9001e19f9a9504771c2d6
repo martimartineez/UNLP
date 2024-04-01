@@ -1,0 +1,54 @@
+package ar.edu.info.unlp.ejercicio1;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class TestTwitter {
+	Twitter sis;
+	Usuario usu1,usu2,usu3,usu4,usu5,uwu;
+	Tweet uno,dos;
+	Retweet ret;
+
+	@BeforeEach
+	void setUp() throws Exception {
+		sis=new Twitter();
+		usu1=new Usuario("Maria");
+		usu2=new Usuario("Maria");
+		usu3=new Usuario("Pedro");
+		usu4= new Usuario("Martin");
+		usu5= new Usuario("tito");
+		uwu= new Usuario("uwu");
+		sis.agregarUsuario(usu1);
+		sis.agregarUsuario(usu3);
+		sis.agregarUsuario(usu4);
+		uno=usu1.crearTweet("anal");
+		dos=usu1.crearTweet("jeje");
+		ret= usu4.retweetear(uno);
+		
+	}
+
+	
+	@Test
+	void testAgregarUsuario() {
+		assertEquals(null,sis.agregarUsuario(usu2));
+		assertEquals(uwu,sis.agregarUsuario(uwu));
+		
+		
+	}
+	@Test
+	void testEliminarUsuario() {
+		assertEquals(null,sis.eliminarUsuario("tito"));
+		assertEquals("Martin",sis.eliminarUsuario("Martin"));
+		
+	}
+	@Test
+	void testElimarTweets() {
+		assertEquals(true,uno.wasEliminated());
+		assertEquals(null,ret.getOrigen());
+	}
+	
+
+}

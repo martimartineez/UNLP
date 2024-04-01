@@ -1,0 +1,94 @@
+programa ejer2
+procesos
+  proceso recorrerAv(ES papel:numero)
+  variables
+    ca:numero
+    av:numero
+  comenzar
+    repetir 99
+      mientras((HayPapelEnLaEsquina))
+        tomarPapel
+        papel:=papel+1
+        si(papel=5)
+          ca:=(PosCa)
+          av:=(PosAv)
+          BloquearEsquina(50,50)
+          Pos(50,50)
+          mientras(HayPapelEnLaBolsa)
+            depositarPapel
+          Pos(av,ca)
+          LiberarEsquina(50,50)
+          papel:=0
+      mover
+    mientras((HayPapelEnLaEsquina))
+      tomarPapel
+      papel:=papel+1
+      si(papel=5)
+        ca:=(PosCa)
+        av:=(PosAv)
+        BloquearEsquina(50,50)
+        Pos(50,50)
+        mientras(HayPapelEnLaBolsa)
+          depositarPapel
+        Pos(av,ca)
+        LiberarEsquina(50,50)
+        papel:=0
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot productor
+  variables
+    papel:numero
+  comenzar
+    papel:=0
+    recorrerAv(papel)
+  fin
+  robot consumidor
+  variables
+    cont:numero
+    papel:numero
+    aux:numero
+    av:numero
+    ac:numero
+  comenzar
+    cont:=0
+    aux:=0
+    av:=(PosAv)
+    ac:=(PosCa)
+    mientras(cont<8)
+      Random(papel,2,5)
+      BloquearEsquina(50,50)
+      Pos(50,50)
+      mientras(HayPapelEnLaEsquina)
+        tomarPapel
+        aux:=aux+1
+      si((aux)=(papel))
+        Pos((av),(ac))
+        LiberarEsquina(50,50)
+        mientras(HayPapelEnLaBolsa)
+          depositarPapel
+        cont:=0
+      sino
+        mientras(HayPapelEnLaBolsa)
+          depositarPapel
+        Pos((av),(ac))
+        LiberarEsquina(50,50)
+        aux:=0
+        cont:=cont+1
+  fin
+variables
+  productor1:productor
+  productor2:productor
+  consumidor1:consumidor
+  consumidor2:consumidor
+comenzar
+  AsignarArea(productor1,ciudad)
+  AsignarArea(productor2,ciudad)
+  AsignarArea(consumidor1,ciudad)
+  AsignarArea(consumidor2,ciudad)
+  Iniciar(productor1,5,1)
+  Iniciar(productor2,10,1)
+  Iniciar(consumidor1,11,1)
+  Iniciar(consumidor2,12,1)
+fin

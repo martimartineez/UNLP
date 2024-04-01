@@ -1,0 +1,40 @@
+programa practica2
+procesos
+  proceso recorrerYTomar( ES flores:numero)
+  comenzar
+    repetir 9
+      mientras HayFlorEnLaEsquina
+        tomarFlor
+        flores := flores+1
+      mover
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flores := flores+1
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot primero
+  variables
+    flores : numero
+    floresDelOtro: numero
+  comenzar
+    recorrerYTomar(flores)
+    si (PosAv = 1)
+      RecibirMensaje(floresDelOtro,robot2)
+      EnviarMensaje(flores,robot2)
+    sino
+      EnviarMensaje(flores,robot1)
+      RecibirMensaje(floresDelOtro,robot1)
+    si (flores > floresDelOtro)
+      Informar((flores)-(floresDelOtro))
+  fin
+variables
+  robot1 : primero
+  robot2:primero
+comenzar
+  AsignarArea(robot1,ciudad)
+  AsignarArea(robot2,ciudad)
+  Iniciar(robot1,1,1)
+  Iniciar(robot2,2,11)
+fin

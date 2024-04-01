@@ -1,0 +1,5 @@
+package TP1_8;
+
+public abstract class Sequence {
+
+}

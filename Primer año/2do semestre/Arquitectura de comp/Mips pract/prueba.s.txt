@@ -1,0 +1,19 @@
+.data
+control: .word 0x10000
+
+dato: .word 0x10008
+
+
+.code
+ld $s0,control($zero)
+ld $s1, dato($zero)
+daddi $t0,$0,8
+sd $t0,0($s0)
+ld $t1,0($s1)
+sd $t0,0($s0)
+ld $t2,0($s1)
+dadd $t3,$t1,$t2
+daddi $t0,$0,2
+sd $t3,0($s1)
+sd $t0,0($s0)
+HALT

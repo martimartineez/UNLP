@@ -1,0 +1,3 @@
+2	20	samsung
+50	5	holis
+galaxyj7

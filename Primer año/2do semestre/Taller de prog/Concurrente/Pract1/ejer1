@@ -1,0 +1,54 @@
+programa ejer1
+procesos
+  proceso recorrer(ES flor:numero;ES vacio:numero)
+  comenzar
+    repetir 99
+      si(HayFlorEnLaEsquina)
+        tomarFlor
+        flor:=flor+1
+      sino
+        vacio:=vacio+1
+      mover
+    si(HayFlorEnLaEsquina)
+      tomarFlor
+      flor:=flor+1
+    sino
+      vacio:=vacio+1
+  fin
+  proceso depositarFlores(ES flor:numero;ES vacio:numero)
+  comenzar
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+    Informar(flor)
+    Informar(vacio)
+  fin
+       
+areas
+  ciudad1: AreaC  (1,1,100,100)
+   
+robots
+  robot tipo1
+  variables
+    flor:numero
+    vacio:numero
+  comenzar
+    flor:=0
+    vacio:=0
+    recorrer(flor,vacio)
+    depositarFlores(flor,vacio)
+  fin
+
+
+variables
+  robot1:tipo1
+  robot2:tipo1
+  robot3:tipo1
+
+comenzar
+  AsignarArea(robot1,ciudad1)
+  AsignarArea(robot2,ciudad1)
+  AsignarArea(robot3,ciudad1)
+  Iniciar(robot1,1,1)
+  Iniciar(robot2,3,1)
+  Iniciar(robot3,5,1)  
+fin

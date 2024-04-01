@@ -1,0 +1,8 @@
+package TP1_8;
+
+public class DoubleEndedQueue<T> extends Queue {
+	
+	public void enqueueFirst(T data) {
+		
+	}
+}

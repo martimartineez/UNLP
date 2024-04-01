@@ -1,0 +1,11 @@
+package TP1_1;
+
+public class ejer1 {
+//private MetodosStatic meto;
+public static void main(String[]args) {
+	//MetodosStatic.enterosFor(2, 9);
+	//MetodosStatic.enterosWhile(5, 14);
+	MetodosStatic.enterosEspecial(4, 12);
+	
+}
+}

@@ -1,0 +1,36 @@
+
+								p gina: 1 
+
+ Listado Fuente: eje8.LST
+ Programa Fuente en: eje8.ASM
+ Fecha: Wed Jun 22 17:29:28 2022
+
+ ÚDir.ÚCodigo maquina	 Linea¿	ÚCodigo en lenguaje ensamble
+
+			      1	ORG 1000H
+ 1000 02 04 06 08 0A 0C	      2	TABLA DB 2,4,6,8,10,12,14,16,18,20
+ 1006 0E 10 12 14
+ 100A 02		      3	FIN DB ?
+ 100B 02		      4	TOTAL DB ?
+ 100C 0D		      5	MAX DB 13
+			      6	ORG 2000H
+ 2000 B0 00		      7	MOV AL, 0
+ 2002 B1 0A		      8	MOV CL, OFFSET FIN-OFFSET TABLA
+ 2004 BB 00 10		      9	MOV BX, OFFSET TABLA
+ 2007 02 07		     10	SUMA: ADD AL, [BX]
+ 2009 FF C3		     11	INC BX
+ 200B FE C9		     12	DEC CL
+ 200D 75 F8		     13	JNZ SUMA
+ 200F F4		     14	HLT
+			     15	END
+
+
+ S I M B O L O S:
+
+ Nombre:	Tipo:		Valor:
+
+ TABLA   	Byte		1000h
+ FIN     	Byte		100Ah
+ TOTAL   	Byte		100Bh	No usado
+ MAX     	Byte		100Ch	No usado
+ SUMA    	Label		2007h

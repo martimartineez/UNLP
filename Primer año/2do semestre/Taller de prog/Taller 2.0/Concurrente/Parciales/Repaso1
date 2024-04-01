@@ -1,0 +1,136 @@
+programa parcial1
+procesos
+  proceso recojerFlores(E av:numero;E ca:numero)
+  comenzar
+    Pos(10,12)
+    tomarFlor
+    BloquearEsquina(12,11)
+    Pos(12,11)
+    depositarFlor
+    Pos(av,ca)
+    LiberarEsquina(12,11)
+  fin
+  proceso recojerPapeles(E av:numero; E ca:numero)
+  comenzar
+    Pos(10,10)
+    tomarPapel
+    BloquearEsquina(12,11)
+    Pos(12,11)
+    depositarPapel
+    Pos(av,ca)
+    LiberarEsquina(12,11)
+  fin
+  proceso recorrer(E id:numero;ES av:numero;E ca:numero)
+  comenzar
+    si id=1
+      BloquearEsquina(12,11)
+      Pos(12,11)
+      tomarFlor
+      av:=av + 1
+      Pos(av,ca)
+      LiberarEsquina(12,11)
+      depositarFlor
+    sino
+      BloquearEsquina(12,11)
+      Pos(12,11)
+      tomarPapel
+      av:= av + 1
+      Pos(av,ca)
+      LiberarEsquina(12,11)
+      depositarPapel
+  fin
+areas
+  fuenteF:AreaP(10,12,11,12)
+  fuenteP:AreaP(10,10,11,10)
+  base:AreaPC(12,11,12,11)
+  depoF:AreaP(12,12,20,12)
+  depoP:AreaP(12,10,20,10)
+  fis:AreaP(20,11,20,11)
+robots
+  robot recolector
+  variables
+    id:numero
+    aux:numero
+    av:numero
+    ca:numero
+  comenzar
+    RecibirMensaje(id,fiscal)
+    aux:=0
+    av:= PosAv
+    ca:= PosCa
+    mientras aux=0
+      si id = 1
+        recojerFlores(av,ca)
+        EnviarMensaje(1,d1)
+        RecibirMensaje(aux,d1)
+      sino
+        recojerPapeles(av,ca)
+        EnviarMensaje(2,d2)
+        RecibirMensaje(aux,d2)
+  fin
+  robot depositador
+  variables
+    id:numero
+    aux:numero
+    av:numero
+    ca:numero
+  comenzar
+    RecibirMensaje(id,fiscal)
+    derecha
+    av:=PosAv
+    ca:=PosCa
+    repetir 7
+      si id=1
+        RecibirMensaje(aux,r1)
+        recorrer(id,av,ca)
+        EnviarMensaje(0,r1)
+      sino
+        RecibirMensaje(aux,r2)
+        recorrer(id,av,ca)
+        EnviarMensaje(0,r2)
+    si id=1
+      RecibirMensaje(aux,r1)
+      recorrer(id,av,ca)
+      EnviarMensaje(1,r1)
+      EnviarMensaje(1,fiscal)
+    sino
+      RecibirMensaje(aux,r2)
+      recorrer(id,av,ca)
+      EnviarMensaje(2,r2)
+      EnviarMensaje(2,fiscal)
+  fin
+  robot fiscalizador
+  variables
+    ganador:numero
+    perdedor:numero
+  comenzar
+    EnviarMensaje(1,r1)
+    EnviarMensaje(1,d1)
+    EnviarMensaje(2,r2)
+    EnviarMensaje(2,d2)
+    RecibirMensaje(ganador,*)
+    Informar(ganador)
+    RecibirMensaje(perdedor,*)
+  fin
+variables
+  r1:recolector
+  r2:recolector
+  d1:depositador
+  d2:depositador
+  fiscal:fiscalizador
+comenzar
+  AsignarArea(r1,fuenteF)
+  AsignarArea(r1,base)
+  AsignarArea(r2,fuenteP)
+  AsignarArea(r2,base)
+  AsignarArea(d1,depoF)
+  AsignarArea(d1,base)
+  AsignarArea(d2,depoP)
+  AsignarArea(d2,base)
+  AsignarArea(fiscal,fis)
+  Iniciar(r1,11,12)
+  Iniciar(r2,11,10)
+  Iniciar(d1,12,12)
+  Iniciar(d2,12,10)
+  Iniciar(fiscal,20,11)
+fin

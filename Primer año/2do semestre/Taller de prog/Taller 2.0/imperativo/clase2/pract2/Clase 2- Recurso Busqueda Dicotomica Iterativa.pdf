@@ -1,0 +1,11 @@
+
+
+program untitled;
+
+var num: integer;
+BEGIN
+	num:=102;
+	writeln(num div 10);
+	
+END.
+
