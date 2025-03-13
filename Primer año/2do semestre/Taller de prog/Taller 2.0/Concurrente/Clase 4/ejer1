@@ -1,0 +1,98 @@
+programa ejer1
+  
+areas
+  area:AreaC(1,1,100,100)
+robots
+  robot repartidor
+  variables
+    id: numero
+    flores: numero
+    av:numero
+    ca:numero
+    vari:numero
+    aux: numero
+  comenzar
+    vari:=0
+    aux:= 0
+    mientras (vari <> 3)
+      flores:=0
+      RecibirMensaje(id,*)
+      si(id = 1)
+        RecibirMensaje(flores,r1)
+      sino
+        si(id = 2)
+          RecibirMensaje(flores,r2)
+        sino
+          RecibirMensaje(flores,r3)
+      si(flores <> 0)
+        si(id = 1)
+          RecibirMensaje(av,r1)
+          RecibirMensaje(ca,r1)
+        sino
+          si(id = 2)
+            RecibirMensaje(av,r2)
+            RecibirMensaje(ca,r2)
+          sino
+            RecibirMensaje(av,r3)
+            RecibirMensaje(ca,r3)
+        Pos(av,ca)
+        repetir flores
+          depositarFlor
+        Pos(100,100)
+        si id = 1
+          EnviarMensaje(aux,r1)
+        sino
+          si id = 2 
+            EnviarMensaje(aux,r2)
+          sino
+            EnviarMensaje(aux,r3)
+      sino
+        vari:= vari + 1
+  fin
+  robot cliente
+  variables
+    id : numero
+    flores : numero
+    aux : numero
+    num : numero
+    ca,av: numero
+  comenzar
+    num := 1
+    id:= PosAv
+    mientras (num <> 0)
+      Random(flores,1,4)
+      EnviarMensaje(id,servi)
+      EnviarMensaje(flores,servi)
+      av:= PosAv
+      EnviarMensaje(av, servi)
+      ca:= PosCa + 1
+      EnviarMensaje( ca ,servi)
+      RecibirMensaje(aux,servi)
+      mover
+      repetir flores 
+        tomarFlor
+      Pos(PosAv,PosCa - 1)
+      mientras (PosCa  <> 100) & (flores <> 0)
+        mover
+        depositarFlor
+        flores := flores -1
+      si PosCa = 100
+        EnviarMensaje(id,servi)
+        num := 0
+        EnviarMensaje(num,servi)
+  fin
+variables
+  r1:cliente
+  r2:cliente
+  r3:cliente
+  servi:repartidor
+comenzar
+  AsignarArea(r1,area)
+  AsignarArea(r2,area)
+  AsignarArea(r3,area)
+  AsignarArea(servi,area)
+  Iniciar(r1,1,1)
+  Iniciar(r2,2,1)
+  Iniciar(r3,3,1)
+  Iniciar(servi,100,100)
+fin

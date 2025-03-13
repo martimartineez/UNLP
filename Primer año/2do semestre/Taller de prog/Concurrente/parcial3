@@ -1,0 +1,91 @@
+programa parcial3
+procesos
+  proceso juntarPapel(ES papel:numero;ES ok:boolean)
+  comenzar
+    si(HayPapelEnLaEsquina)
+      tomarPapel
+      papel:=papel+1
+    sino
+      ok:=F
+  fin
+  proceso juntarFlor(ES flor:numero;ES ok:boolean)
+  comenzar
+    si(HayFlorEnLaEsquina)
+      tomarFlor
+      flor:=flor+1
+    sino
+      ok:=F
+  fin
+areas
+  area1: AreaP(2,2,2,2)
+  area2: AreaP(3,3,3,3)
+  areaComun: AreaC(50,50,50,50)
+  areaRecorrido: AreaC(1,5,100,5)
+robots
+  robot papelero
+  variables
+    papel,av,ca,flor:numero
+    ok:boolean
+  comenzar
+    av:=PosAv
+    ca:=PosCa
+    papel:=0
+    ok:=V
+    mientras(ok)
+      BloquearEsquina(50,50)
+      Pos(50,50)
+      juntarPapel(papel,ok)
+      Pos(av,ca)
+      LiberarEsquina(50,50)
+    EnviarMensaje(papel,r2)
+    RecibirMensaje(flor,r2)
+    si(papel<flor)
+      Informar(papel)
+      Pos(1,5)
+      derecha
+      repetir papel
+        mover
+    sino
+      si(papel=flor)
+        Informar('Empate')
+  fin
+  robot florero
+  variables
+    papel,av,ca,flor:numero
+    ok:boolean
+  comenzar
+    av:=PosAv
+    ca:=PosCa
+    flor:=0
+    ok:=V
+    mientras(ok)
+      BloquearEsquina(50,50)
+      Pos(50,50)
+      juntarFlor(flor,ok)
+      Pos(av,ca)
+      LiberarEsquina(50,50)
+    EnviarMensaje(flor,r1)
+    RecibirMensaje(papel,r1)
+    si(flor<papel)
+      Informar(flor)
+      Pos(1,5)
+      derecha
+      repetir flor
+        mover
+    sino
+      si(flor=papel)
+        Informar('Empate')
+  fin
+variables
+  r1: papelero
+  r2: florero
+comenzar
+  AsignarArea(r1,area1)
+  AsignarArea(r1,areaComun)
+  AsignarArea(r1,areaRecorrido)
+  AsignarArea(r2,area2)
+  AsignarArea(r2,areaComun)
+  AsignarArea(r2,areaRecorrido)
+  Iniciar(r1,2,2)
+  Iniciar(r2,3,3)
+fin

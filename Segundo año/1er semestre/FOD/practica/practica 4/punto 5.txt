@@ -1,0 +1,16 @@
+Defina los siguientes conceptos:
+● Overflow
+	se da cuanto se intenta agregar un elemento, pero el nodo ya tiene el limite maximo de elementos
+
+● Underflow
+	se da cuando en un nodo se intenta eliminar un elemento y queda en un numero menor al minimo permitido
+
+● Redistribución
+	Se busca a un hermano adyacente y se toman los elementos de este, la raiz y se dividen entre los 2 nodos, generalmente la raiz pasa a ser el elemento del medio del nodo 
+	
+● Fusión o concatenación
+	se da cuando no se puede redistribuir, en este caso se toman ambos nodos y se "juntan" tambien viendo que pasa con la raiz
+
+En los dos últimos casos, ¿cuándo se aplica cada uno?
+	la redistribucion se aplica cuando se eliminan elementos o se agregan y hay overlow 
+	la fusion siempre que se intenta eliminar elementos y sucede underflow

@@ -1,0 +1,78 @@
+programa uwu
+procesos
+  proceso recolectarPapeles(ES papel:numero)
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      papel:=papel+1
+  fin
+areas
+  area1: areaPC(5,5,6,6)
+  areaR1: areaP(1,1,1,1)
+  areaR2: areaP(2,2,2,2)
+robots
+  robot: recolector1
+  variables
+    papel,av,ca : numero
+    ok: boolean
+  comenzar
+    av:=PosAv
+    ca:=PosCa
+    ok:=V
+    mientras (ok)
+      papel:=0
+      BloquearEsquina(5,5)
+      Pos(5,5)
+      recolectarPapeles(papel)
+      si(papel=0)
+        ok:=F
+        Pos(av,ca)
+        LiberarEsquina(5,5)
+        EnviarMensaje(F,r2)
+      sino
+        si papel<10
+          ok:=F
+          EnviarMensaje(F,r2)
+        sino
+          EnviarMensaje(V,r2)
+        BloquearEsquina(6,6)
+        Pos(6,6)
+        LiberarEsquina(5,5)
+        repetir papel
+          depositarPapel
+        Pos(av,ca)
+        LiberarEsquina(6,6)
+  fin
+  robot: recolector2
+  variables
+    papel,av,ca: numero
+    ok: boolean
+  comenzar
+    av:=PosAv
+    ca:=PosCa
+    RecibirMensaje(ok,r1)
+    mientras(ok)
+      papel:=0
+      BloquearEsquina(5,5)
+      Pos(5,5)
+      recolectarPapeles(papel)
+      si(papel=0)
+        Pos(av,ca)
+        LiberarEsquina(5,5)
+        ok:=F
+      sino
+        BloquearEsquina(6,6)
+        Pos(6,6)
+        repetir papel
+          depositarPapel
+        Pos(av,ca)
+        LiberarEsquina(6,6)
+        si papel<10
+          ok:=F
+  fin
+variables
+  r1:recolector1
+  r2:recolector2
+comenzar
+  
+fin

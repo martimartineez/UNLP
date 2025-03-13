@@ -1,0 +1,50 @@
+sql
+1. select c.nombre, c.anio
+   from club c inner join ciudad ciu on(c.codigociudad=ciu.codigociudad)
+   where ciu.nombre='La plata' and c.codClub not in(select e.codigoClub
+						    from Estadio e)
+
+2. select distinct ju.dni, ju.nombre, ju.appellido
+   from jugador j inner join clubJugador cj on(j.ani=cj.dni)
+   where j.edad>29 and cj.codigoClub in(select c.codigoClub
+					from club c inner join ciudad ciu on(c.codciudad=ciu.codciudad)
+					where ciu.nombre=Coroba)
+
+3. select c.nombre, avg(j.edad)
+   from club c left join clubjugador cj on (c.codigoclub=cj.codigoclub)
+   	inner join jugador j on (cj.dni=j.dni)
+   group by c.codigoClub, c.nombre, c,anifundacion, c.codigoCiudad
+
+4.
+select j.nombre, j.apellido, j.edad, count(distinct cj.codigo) as cantidad
+from jugador j left join club jugador cj on (j.dni=cj.dni)
+group by j.dni, j.nombre, j.apellido
+
+5.
+select c.nombre
+from club c left join clubjugador cj on(c.codigoclub=cj.codigoclub)
+where cj.dni not in(select j.dni
+		    from jugador j inner join ciudad ciu on(j.codigociudad=ciu.codigociudad)
+		    where ciu.nombre='Mar del plata')
+
+6. select j.nombre, j.apellido
+   from jugador j
+   where not exist (select *
+		    from club c
+		    where not exist(select *
+				    from clubJugador cj
+				    where cj.codigoclub=c.codigoclub and cj.dni=j.dni))
+
+algebra
+
+6. pi jugador.nombre, jugador.apellido, clubjugador.codigoclub(judador |x| clubjugador) % pi codigoclub(club)
+7. Berisso <-- pi jugador.dni,jugador.nombre, jugador.apellido, jugador.edad,jugadro.codigo.ciudad(Q=ciudad.nombre=Berisso(jugador|X|ciudad))
+
+clubesjudadoresdeBerisso <-- pi club.codigoclub,club.nombre,club.anifundacion,club.codigociudad(berisso|x|clubjugador|x|club)
+
+pi nombre(club-clubesjugadoresdeBerisso)
+
+8. GEDLP <== pi codigoclub(Q nombre='Gimnasia y esgrima de la plata'(Club))
+   pi jugador.dni,jugador.nombre,jugadro.apellido(jugador|X|clubjugador|X|GEDLP)
+
+9. 

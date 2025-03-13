@@ -1,0 +1,37 @@
+(a) ¿Qué cambios es necesario realizar en la definición y el código de la función WithoutAccent
+para que ambas invocaciones dadas como ejemplo, funcionen correctamente.
+
+    agregue un parametro por defecto dejarMayus=True, asi si no se especifica como segundo parametro false,
+     va a poner en miniusculas las palabras
+
+(b) La función modificada en el punto anterior ¿con cuántos parámetros se puede invocar?¿Cuántos
+en forma obligatoria y/o opcionales?
+
+    La funcion modificada se puede invocar con 2 parametros, uno obligatorio que es el Texto y
+    otro opcional que es el booleano que indica si dejar las mayusculas.
+
+
+(c) En el bloque de apertura del archivo, produce una excepción, ¿qué modificaciones deberías
+hacer para manejar sólo esa excepción y qué diferencia hay con esta solución planetada?
+
+    se puede agregar el nombre especifico de la excepción, en este caso FileNotFoundError,
+    la solucion planteada originalmente informa un error siempre que suceda una excepción,
+    pero no se sabe cual es, con esta modificacion nos aseguramos que se informa el error
+    cuando el archivo no se encuentra(otros errores no se manejarian)
+
+
+(d)¿Qué cláusula en el bloque de excepción es necesario agregar si se quiere mostrar un mensaje,
+luego de la apertura del archivo, independiemente si se produjo o no la excepción?
+
+    se debe usar finally, este se va a ejecutar siempre sin importar si hubo excepcion o no
+
+(e)¿Cuál es tipo de dato de la variable csv_reader?
+    segun chatgpt:
+        Este código imprimirá <class '_csv.reader'>. Esto indica que csv_reader es un objeto 
+        del tipo csv.reader, que es la clase proporcionada por el módulo csv de Python
+         para leer archivos CSV.
+    
+    yo entiendo que es como una especie de iterable, como una lista de listas
+
+    
+

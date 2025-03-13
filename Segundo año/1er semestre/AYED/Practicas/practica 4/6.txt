@@ -1,0 +1,28 @@
+a.- Supongamos que tenemos un algoritmo de O(log2 n) y disponemos de 1 hora de uso de CPU. En esa hora, la CPU puede ejecutar el algoritmo con una entrada de tamaño n= 1024 como máximo. ¿Cuál sería el mayor tamaño de entrada que podría ejecutar nuestro algoritmo si disponemos de 4 horas de CPU?
+
+O(log2n), 1 hora cpu, en esa hora n=1024
+
+t(1024)=log^2(1024)=10^2
+	
+t(n)=cantidad de operaciones que se ejecutan (en este caso en 1 hora)
+
+t(1024)=log^2(1024)=10^2
+10^2 operaciones en 1 hora
+
+en 4 horas, 4(10^2)=400     (20^2) operaciones
+
+
+t(n)=log^2(n)=20^2 ---> n=log 2 se multiplica 2 veces a si mismo para llegar a n
+
+n=2^20
+
+
+
+b.- Considerando que un algoritmo requiere T(n) operaciones para resolver un problema y la computadora procesa 10.000 operaciones por segundo. Si T(n) = n2, determine el tiempo en segundos requerido por el algoritmo para resolver un problema de tamaño n=2.000.
+
+-t(n)=n^2
+-10000 operaciones x segundo
+
+t(2000)=2000^2= 4000000 operaciones
+
+---> si son 10000 por segundo, 4000000/10000= 400 segundos

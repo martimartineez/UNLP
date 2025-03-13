@@ -1,0 +1,35 @@
+procedure banco is
+
+	task empleado is
+		entry atender(Comprobante: out string);
+	end empleado;
+	
+	task type cliente;
+	arrClientes: array(1..N) of cliente;
+
+	task body empleado is
+	begin
+		loop
+			accept atender(Comprobante: out string) do
+				Comprobante= generarComprobante();
+			end atender;
+		end loop;
+	end empleado;
+
+	task body cliente is
+	miComprobante: String;
+	begin
+		select
+			empleado.atender(miComprobante);
+		or delay 600
+			null;
+		end select
+	end cliente;
+
+
+begin 
+	null;
+end banco;
+		
+
+	

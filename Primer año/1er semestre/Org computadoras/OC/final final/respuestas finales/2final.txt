@@ -1,0 +1,24 @@
+1.	a) El rango es [- 0,11111 *2^1111 a +0,11111 *2^1111] (como es exceso 8, (15-8=7) seria 2^7)
+	b)No se puede representar el 322 directamente, el mas cercano es el + 0,11111* 2^1111 = 2^6 + 2^5 + 2^4 +2^3 + 2^2= 64 + 32 + 16 + 8 + 4= 124.
+
+2.	a)Las tres formas de representar una función lógico son: una tabla de verdad, una expresión algebraica o con un circuito de compuertas lógicas.
+	b)En el circuito lógico combinacional "suma de productos", se toman los valores validos que se pueden obtener de una tabla de verdad y se crean combinaciones de compuertas, primero con los valores validos que pasan por compuertas and, los resultados es estas pasan por compuertas or y asi obtener el resultado.
+
+3.	a) El ciclo de instrucción es el camino de chequeos y obtención de datos se hace al querer realizar una tarea, que dependiendo cual sea la misma, puede variar
+	Respuesta mejorada:
+El ciclo de instrucción es la secuencia de pasos que sigue la CPU para ejecutar una instrucción desde el programa almacenado en la memoria. Este ciclo se repite continuamente y consta de varias fases, típicamente incluyendo la búsqueda (fetch), decodificación (decode), ejecución (execute) y, a veces, una fase de almacenamiento (store).
+
+	b) Al realizar una operación aritmética, lo primero que se hace es obtener la dirección de la instrucción desde el PC, se va a memoria a buscar la dirección se trae la instrucción, se almacena en IR y es traducida por la UC sabiendo cual es y los operandos necesarios, en este momento se incrementa el PC y se puede mantener en registros los operandos o buscarlos en memoria(aca se usa MAR y MBR), los cuales van a ser usados por la ALU para realizar la operación, luego el resultado será almacenado donde se necesite
+
+4.	a) Una jerarquia de memoria se compone por varias memorias que tienen diferentes usos y caracteristicas, en la punta de la piramide suelen estas los registros los cuales suelen tener pequena cantidad de almacenamiento pero son muy rapidos(1ns), luego se encuentra el cache(velocidad 5-20 ns), luego la memoria principal (60-80 ns) y luego los discos de almacenamiento (10ms). cuanto mas se baja en la piramide se tiene mas cantidad de memoria disponible pero menos rapida, tambien el costo por cantidad de memoria disminuye.
+	b) La organizacion 2D generalmente SI va a requerir refresco, porq los capacitores que utilizan las memorias DRAM se descargan y necesitan 'recargarse' periodicamente, para seguir manteniendo la informacion almancenada.
+5.
+	100 cm, 50 cm, 100 puntos por cm (tengo que caluclar cuantos puntos para largo y cuantos puntos para ancho, y ahi multiplico para obtener el todal)
+
+	a)100*100=10.000 puntos
+	  50*100=5000 puntos
+	  --> 5000*10000=50.000.000 puntos totales
+	al ser true color cada punto utiliza 24bits(3bytes)--> 50.000.000 * 3bytes= 150.000.000 bytes se utilizan
+	
+	b) si fuera monocromatica utilizaria 1 bit por punto, osea cada imagen monocromatica usa 50.000.000 bits= 6.250.000 bytes
+	   entonces total de memoria dividivo lo que ocupa una imagen monocromatica: 150.000.000 bytes/6.250.000 bytes= 24. CABEN 24 IMAGENES

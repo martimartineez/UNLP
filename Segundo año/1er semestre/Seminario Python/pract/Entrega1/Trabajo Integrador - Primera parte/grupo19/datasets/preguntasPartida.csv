@@ -1,0 +1,6 @@
+Pregunta,Respuesta,op,RespuestaUsuario
+"Sabemos que el partido de san andres de giles, si posee algún tipo de conectividad, pero ¿Posee telefonía fija?",no,"['si', 'no']",si
+El partido de general angel v. penaloza¿Posee fibra optica?,si,"['si', 'no']",si
+"En  la provincia de buenos aires, el partido de moreno, ¿Posee algún tipo de conectividad?",si,"['si', 'no']",si
+El partido de tafi del valle¿Posee fibra optica?,no,"['si', 'no']",si
+El partido de cochinoca¿Posee fibra optica?,no,"['si', 'no']",3

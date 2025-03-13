@@ -1,0 +1,144 @@
+programa parcialUno
+procesos
+  proceso tomarFlores(ES flor:numero)
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      flor:=flor+1
+  fin
+  proceso recorrerCalle(ES flor:numero)
+  comenzar
+    repetir 5
+      mover
+      tomarFlores(flor)
+  fin
+  proceso comparar(ES gana:numero;E flor1:numero;E flor2:numero;E flor3:numero;ES estado1:boolean;ES estado2:boolean;ES estado3:boolean)
+  comenzar
+    si(((flor1)>(flor2))&((flor1)>(flor3)))
+      gana:=1
+      estado2:=V
+      estado3:=V
+    sino
+      si(((flor2)>(flor1))&((flor2)>(flor3)))
+        gana:=2
+        estado1:=V
+        estado3:=V
+      sino
+        gana:=3
+        estado1:=V
+        estado2:=V
+  fin 
+areas
+  upper:AreaP(20,1,21,2)
+  traba1:AreaP(1,1,6,6)
+  traba2:AreaP(7,1,12,6)
+  traba3:AreaP(13,1,18,6)
+  punto:AreaC(10,10,10,10)
+robots
+  robot trabajador
+  variables
+    flor:numero
+    quien:numero
+    puedo:boolean
+    estado:boolean
+    ca:numero
+    av:numero
+  comenzar
+    quien:=0
+    RecibirMensaje(quien,coordinador)
+    flor:=0
+    ca:= (PosCa)
+    av:= (PosAv)
+    puedo:=F
+    estado:=F
+    tomarFlores(flor)
+    recorrerCalle(flor)
+    repetir 3
+      derecha
+      EnviarMensaje(quien,coordinador)
+      EnviarMensaje(flor,coordinador)
+      RecibirMensaje(puedo,coordinador)
+      si(puedo = V)
+        recorrerCalle(flor)
+    RecibirMensaje(estado,coordinador)
+    si(estado = V)
+      mientras(HayFlorEnLaBolsa)
+        BloquearEsquina(10,10)
+        Pos(10,10)
+        depositarFlor
+        Pos(av,ac)
+        LiberarEsquina(10,10)
+  fin
+  robot jefe
+  variables
+    quien:numero
+    flor:numero
+    flor1:numero
+    estado1:boolean
+    estado2:boolean
+    estado3:boolean
+    flor2:numero
+    flor3:numero
+    gana:numero
+  comenzar
+    estado1:=F
+    flor:=0
+    estado2:=F
+    estado3:=F
+    flor1:=0
+    flor2:=0
+    flor3:=0
+    gana:=0
+    quien:=1
+    EnviarMensaje(quien,robot1)
+    quien:=2
+    EnviarMensaje(quien,robot2)
+    quien:=3
+    EnviarMensaje(quien,robot3)
+    repetir 9
+      RecibirMensaje(quien,*)
+      si(quien = 1)
+        RecibirMensaje(flor,robot1)
+        flor1:=flor1+flor
+        estado1:=V
+      sino
+        si(quien = 2)
+          RecibirMensaje(flor,robot2)
+          flor2:=flo2+flor
+          estado2:=V
+        sino
+          si(quien = 3)
+            RecibirMensaje(flor,robot3)
+            flor3:=flor3+flor
+            estado3:=V
+      si((estado1=V)&(estado2=V)&(estado3=V)
+        EnviarMensaje(estado1,robot1)
+        EnviarMensaje(estado2,robot2)
+        EnviarMensaje(estado3,robot3)
+        estado1:=F
+        estado2:=F
+        estado3:=F
+    comparar(gana,flor1,flor2,flor3,estado1,estado2,estado3)
+    Informar(gana)
+    EnviarMensaje(estado1,robot1)
+    EnviarMensaje(estado2,robot2)
+    EnviarMensaje(estado3,robo3)
+  fin
+variables
+  robot1:trabajador
+  robot2:trabajador
+  robot3:trabajador
+  coordinador:jefe
+comenzar
+  AsignarArea(robot1,traba1)
+  AsignarArea(robot1,punto)
+  AsignarArea(robot2,traba2)
+  AsignarArea(robot2,punto)
+  AsignarArea(robot3,traba3)
+  AsignarArea(robot3,punto)
+  AsignarArea(coordinador,upper)
+  Iniciar(robot1,1,1)
+  Iniciar(robot2,7,1)
+  Iniciar(robot3,13,1)
+  Iniciar(coordinador,20,1)
+fin

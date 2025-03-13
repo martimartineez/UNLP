@@ -1,0 +1,1 @@
+C:\Users\marti\OneDrive\Escritorio\UNLP\Primer año\2do semestre\Arquitectura de comp\Mips pract\prueba.s.txt

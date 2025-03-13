@@ -1,0 +1,24 @@
+(a) Mostrá la ejecución del código y explicá qué hace. ¿De qué tipo es my_data?¿Qué
+contiene?
+
+• (b) Escribí una solución alternativa usando pandas. Mostrá la ejecución de tu versión y
+explicá en detalle qué hace. En esta versión,¿es necesario utilizar la estructura for para
+encontrar lo buscado? ¿Por qué?
+
+• Nota: La salida de la solución con pandas no es necesario que sea exactamente igual en
+cuanto a formato. Lo importante es que se muestren los datos filtrados de acuerdo con lo
+especificado en el código original.
+
+• Teniendo en cuenta tu solución, respondé:
+– (c) Mostrá en tu código algún objeto de tipo dataframe y otro de tipo Series.
+
+– (d) ¿De qué manera (usando pandas) podemos obtener los valores únicos de una columna
+del dataset? Ejemplificá con los objetos mostrados en el inciso anterior.
+
+– (e) En base a tu versión en pandas del código dado, describí al menos dos ventajas del
+uso de esta librería sobre el manejo de archivos csv. Si considerás que no las hay, indicá
+en qué te basás.
+
+1. no hace falta seprar header y datos
+2. es muy facil ver el contendo del csv
+3. tambien es muy facil filtrar tipos de datos o datos nulos

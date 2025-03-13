@@ -1,0 +1,150 @@
+programa repaso2
+procesos
+  proceso tomarFlores(ES flores:numero)
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flores:= flores + 1
+  fin
+  proceso tomarPapeles(ES papeles:numero)
+  comenzar
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      papeles:= papeles + 1
+  fin
+areas
+  ver1:AreaP(2,1,2,1)
+  hor1:AreaP(3,1,3,1)
+  ver2:AreaP(4,1,4,1)
+  hor2:AreaP(5,1,5,1)
+  fis:AreaP(1,1,1,1)
+  equipo1:AreaPC(5,5,20,15)
+  equipo2:AreaPC(25,5,40,15)
+
+robots
+  robot vertical
+  variables
+    flores:numero
+    id:numero
+  comenzar
+    RecibirMensaje(id,fiscal)
+    flores:=0
+    si id=1
+      BloquearEsquina(5,5)
+      Pos(5,5)
+      tomarFlores(flores)
+      Pos(5,6)
+      LiberarEsquina(5,5)
+      repetir 9
+        tomarFlores(flores)
+        mover
+      tomarFlores(flores)
+      EnviarMensaje(id,fiscal)
+      EnviarMensaje(flores,fiscal)
+    sino
+      si id=2
+        BloquearEsquina(25,5)
+        Pos(25,5)
+        tomarFlores(flores)
+        Pos(25,6)
+        LiberarEsquina(25,5)
+        repetir 9
+          tomarFlores(flores)
+          mover
+        tomarFlores(flores)
+        EnviarMensaje(id,fiscal)
+        EnviarMensaje(flores,fiscal)
+  fin
+  robot horizontal
+  variables
+    papeles:numero
+    id:numero
+  comenzar
+    RecibirMensaje(id,fiscal)
+    derecha
+    papeles:=0
+    si id = 3
+      BloquearEsquina(5,5)
+      Pos(5,5)
+      tomarPapeles(papeles)
+      Pos(6,5)
+      LiberarEsquina(5,5)
+      repetir 4
+        tomarPapeles(papeles)
+        mover
+      tomarPapeles(papeles)
+      EnviarMensaje(id,fiscal)
+      EnviarMensaje(papeles,fiscal)
+    sino
+      si id = 4
+        BloquearEsquina(25,5)
+        Pos(25,5)
+        tomarPapeles(papeles)
+        Pos(26,5)
+        LiberarEsquina(25,5)
+        repetir 4
+          tomarPapeles(papeles)
+          mover
+        tomarPapeles(papeles)
+        EnviarMensaje(id,fiscal)
+        EnviarMensaje(papeles,fiscal)     
+  fin
+  robot fiscalizador
+  variables
+    equipo1:numero
+    equipo2:numero
+    id:numero
+    aux:numero
+  comenzar
+    equipo1:=0
+    equipo2:=0
+    EnviarMensaje(1,v1)
+    EnviarMensaje(2,v2)
+    EnviarMensaje(3,h1)
+    EnviarMensaje(4,h2)
+    repetir 4
+      RecibirMensaje(id,*)
+      si id=1
+        RecibirMensaje(aux,v1)
+        equipo1:= equipo1 + aux
+      sino
+        si id=2
+          RecibirMensaje(aux,v2)
+          equipo2:= equipo2 + aux
+        sino
+          si id = 3
+            RecibirMensaje(aux,h1)
+            equipo1:= equipo1 + aux
+          sino
+            RecibirMensaje(aux,h2)
+            equipo2:= equipo2 + aux
+    si equipo1 > equipo2
+      Informar(1)
+    sino
+      si equipo2 > equipo1
+        Informar(2)
+      sino
+        Informar('Empate',0)
+  fin
+variables
+  v1:vertical
+  v2:vertical
+  h1:horizontal
+  h2:horizontal
+  fiscal:fiscalizador
+comenzar
+  AsignarArea(v1,ver1)
+  AsignarArea(v1,equipo1)
+  AsignarArea(h1,hor1)
+  AsignarArea(h1,equipo1)
+  AsignarArea(v2,ver2)
+  AsignarArea(v2,equipo2)
+  AsignarArea(h2,hor2)
+  AsignarArea(h2,equipo2)
+  AsignarArea(fiscal,fis)
+  Iniciar(v1,2,1)
+  Iniciar(h1,3,1)
+  Iniciar(v2,4,1)
+  Iniciar(h2,5,1)
+  Iniciar(fiscal,1,1) 
+fin

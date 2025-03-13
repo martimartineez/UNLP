@@ -1,0 +1,27 @@
+Los árboles B+ representan una mejora sobre los árboles B dado que conservan la
+propiedad de acceso indexado a los registros del archivo de datos por alguna clave,
+pero permiten además un recorrido secuencial rápido. Al igual que en el ejercicio 2,
+considere que por un lado se tiene el archivo que contiene la información de los
+alumnos de la Facultad de Informática (archivo de datos no ordenado) y por otro lado
+se tiene un índice al archivo de datos, pero en este caso el índice se estructura como
+un árbol B+ que ofrece acceso indizado por DNI al archivo de alumnos. Resuelva los
+siguientes incisos:
+
+a. ¿Cómo se organizan los elementos (claves) de un árbol B+? ¿Qué elementos se
+encuentran en los nodos internos y que elementos se encuentran en los nodos
+hojas?
+
+en el arbol B+, las claves se posicionan en los ultimos nodos del arbol, osea son ojas, los nodos superiores son copias de algunas hojas, cuando se acomodan los valores se sube a raiz un numero, pero su copia y este numero se posiciona en una hoja
+
+b. ¿Qué característica distintiva presentan los nodos hojas de un árbol B+? ¿Por
+qué?
+se pueden tratar como un indice indexado(un vector), porq al hacer la busqueda se va directo a las hojas (?
+
+e. Explique con sus palabras el proceso de búsqueda de los alumnos que tienen DNI
+en el rango entre 40000000 y 45000000, apoyando la búsqueda en un índice
+organizado como un árbol B+. ¿Qué ventajas encuentra respecto a este tipo de
+búsquedas en un árbol B?
+
+va a recorrer como los otros arboles B, pero al estar indexado, vamos directo al elemento que queremos, a su vez las hojas estan relacionadas entre si(apuntan al siguiente nodo hoja asi es como se trata como un vector)
+
+

@@ -1,0 +1,116 @@
+programa ejer3
+procesos
+  proceso tomarPapeles(ES papel:numero)
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      papel:=papel+1
+  fin
+  proceso recorrer1(ES papel:numero;ES total:numero)
+  comenzar
+    repetir 9
+      tomarPapeles(papel)
+      mover
+    tomarPapeles(papel)
+    si((PosAv)=10)
+      total:=papel
+      Pos(21,1)
+      EnviarMensaje(total,A2)
+    sino
+      si((PosAv)=20)
+        total:=total+papel
+        Pos(31,1)
+        EnviarMensaje(total,A1)
+      sino
+        si((PosAv)=30)
+          total:=total+papel
+          EnviarMensaje(total,A2)
+        sino
+          si((PosAv)=40)
+            total:=total+papel
+            Informar(total)           
+  fin
+  proceso tomarFlores(ES flor:numero)
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      flor:=flor+1
+  fin
+  proceso recorrer2(ES flor:numero;ES total:numero)
+  comenzar
+    repetir 9
+      tomarFlores(flor)
+      mover
+    tomarFlores(flor)
+    si((PosAv)=10)
+      total:=flor
+      Pos(21,5)
+      EnviarMensaje(total,B2)
+    sino
+      si((PosAv)=20)
+        total:=total+flor
+        Pos(31,5)
+        EnviarMensaje(total,B1)
+      sino
+        si((PosAv)=30)
+          total:=total+flor
+          EnviarMensaje(total,B2)
+        sino
+          si((PosAv)=40)
+            total:=total+flor
+            Informar(total)      
+  fin
+
+areas
+  parte1: AreaC(1,1,40,1)
+  parte2: AreaC(1,5,40,5)
+robots
+  robot tipo1
+  variables
+    papel:numero
+    total:numero
+  comenzar
+    papel:=0
+    derecha
+    si((PosAv)=1)
+      recorrer1(papel,total)
+      recorrer1(papel,total)
+    sino
+      si((PosAv)=11)
+        RecibirMensaje(total,A1)
+        recorrer1(papel,total)
+        recorrer1(papel,total)
+  fin
+  robot tipo2
+  variables
+    flor:numero
+    total:numero
+  comenzar
+    flor:=0
+    total:=0
+    derecha
+    si((PosAv)=1)
+      recorrer2(flor,total)
+      recorrer2(flor,total)
+    sino
+      si((PosAv)=11)
+        RecibirMensaje(flor,B1)
+        recorrer2(flor,total)
+        recorrer2(flor,total)
+  fin
+
+variables
+  A1:tipo1
+  A2:tipo1
+  B1:tipo2
+  B2:tipo2
+comenzar
+  AsignarArea(A1,parte1)
+  AsignarArea(A2,parte1)
+  AsignarArea(B1,parte2)
+  AsignarArea(B2,parte2)
+  Iniciar(A1,1,1)
+  Iniciar(A2,11,1)
+  Iniciar(B1,1,5)
+  Iniciar(B2,11,5)
+fin

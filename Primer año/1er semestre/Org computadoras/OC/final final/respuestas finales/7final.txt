@@ -1,0 +1,13 @@
+1.	a) el rango va desde - 0,11111 * 2^1111 a + 0,11111 *2^1111
+	b)no puedo representar exactamente el 32,2. pero si el 32, seria 0,10000 * 2^6 --> 0,10000 * 2^1110 (con exceso es 2^14)
+
+2.	a) una función lógica se puede representar con una tabla de verdad, donde se comparan posibles combinaciones, una expresión matemática, o con un circuito de compuertas lógicas.
+	b) El circuito lógico D, este circuito tiene como característica que solo posee una entrada, la cual cuando el clock que posee lo permita, esta entrada se utilizara de un lado con el valor que es y del otro lado de la compuerta se utilizara negada, asi 1 sola entrada satisface las 2 entradas necesarias para la compuerta
+
+3.	a) un ciclo de instrucción son los pasos que se deben seguir para realizar cierta tarea, dependiendo la instrucción puede varias un poco, pero en general suele ser Tomas la dirrecion del PC, buscar en esa dirección de memoria la instrucción, traerla y guardarla en IR, se traduce por la UC, se realiza la tarea y se almacena algún resultado.
+	b) en una operación aritmética, se toma la dirrecion de PC, se busca en memoria la instrucción, se guarda en IR, la UC la traduce y aca se sabe o donde están los operandos, por ejemplo en memoria o en los registros, si están en memoria se buscan en la dirrecion de memoria y se traen, gracias a la  MAR y MBR. Una vez que se tienen se envia a la ALu la cual realiza la operación aritmética, actualiza las flags en caso neceario y se almacena el resultado,
+
+4.	a) la jerarquía de memoria típicamente se compone, desde la punta de la pirámide hacia abajo, de: registros (tiempos de acceso 1ns, tamanio 1KB), cache (5-20ns, 1MB), memoria principal (60-80 ns, algunos GB) y discos de almacenamiento (10ms, muchos GB)
+	b) Que una organiazcion de memoria requiera o no refresco no tiene nada que ver con si es 2D o 2 1/2 D, el refresco se necesitara siempre que se tengan memorias DRAM, porq los capacitores de estas se descargan energéticamente y para no perder los datos se produce este refesco, por ejemplo si fueran memorias SRAM ahí no haría falta el refresco.
+
+5.	a) 

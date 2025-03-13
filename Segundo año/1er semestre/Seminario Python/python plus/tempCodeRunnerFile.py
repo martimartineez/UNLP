@@ -1,0 +1,1 @@
+print_report('Ubicación', my_data)

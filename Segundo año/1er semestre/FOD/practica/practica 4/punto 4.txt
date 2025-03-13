@@ -1,0 +1,45 @@
+4. Dado el siguiente algoritmo de búsqueda en un árbol B:
+procedure buscar(NRR, clave, NRR_encontrado, pos_encontrada, resultado)
+var clave_encontrada: boolean;
+begin
+if (nodo = null)
+resultado := false; {clave no encontrada}
+else
+posicionarYLeerNodo(A, nodo, NRR);
+claveEncontrada(A, nodo, clave, pos, clave_encontrada);
+if (clave_encontrada) then begin
+NRR_encontrado := NRR; { NRR actual }
+pos_encontrada := pos; { posicion dentro del array }
+resultado := true;
+end
+else
+buscar(nodo.hijos[pos], clave, NRR_encontrado, pos_encontrada,
+resultado)
+end;
+
+
+Asuma que para la primera llamada, el parámetro NRR contiene la posición de la raíz
+
+a. PosicionarYLeerNodo(): Indique qué hace y la forma en que deben ser
+enviados los parámetros (valor o referencia). Implemente este módulo en Pascal.
+
+busca en el archivo A(referencia) las claves que estan en el nodo que hace referencia el NRR(valor)  y las guarda en nodo(referencia) 
+
+b. claveEncontrada(): Indique qué hace y la forma en que deben ser enviados los
+parámetros (valor o referencia). ¿Cómo lo implementaría?
+
+esta recibe el archivo de los datos(referencia), el nodo(valor) con las claves, una clave(referencia),la pos(referencia) y el booleano(referencia)
+aca se compararia si la clave buscada, esta en las claves encontradas antes, si es el caso, ingresaria al archivo buscando dicha clave y guardaria la posicion de esta en el archivo
+tambien actualizaria clave_encontrada a true
+
+c. ¿Existe algún error en este código? En caso afirmativo, modifique lo que
+considere necesario.
+
+nodo.hijos[pos] no estoy seguro bien xd no funcionaria como lo describí antes, pero buscaria sino en todo el arbol devuelta las claves para ver si coincide, estaria mal eso
+
+
+d. ¿Qué cambios son necesarios en el procedimiento de búsqueda implementado
+sobre un árbol B para que funcione en un árbol B+?
+
+primero habria que recorrer el arbol hasta llegar a una hoja
+

@@ -1,0 +1,24 @@
+
+
+program ejercicio2;
+
+Var
+	num,mayor,i:integer;
+	orden:integer;
+
+BEGIN
+	orden:=0;
+	mayor:=-999;
+	for i:=1 to 10 do
+		begin
+			read(num);
+			if(num>mayor) then
+			begin
+				mayor:=num;
+				orden:=i;
+			end;	
+		end;
+	write('El mayor numero leido fue el ',mayor,'en el orden ',orden);
+	
+END.
+

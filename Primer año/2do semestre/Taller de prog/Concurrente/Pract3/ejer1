@@ -1,0 +1,77 @@
+programa ejer1
+areas
+  areaF : AreaPC(1,1,5,10)
+  areaP : AreaPC(6,1,10,9)
+  areaIF: AreaPC(6,10,7,10)
+  areaIP:AreaPC(8,10,9,10)
+  punto: AreaC(10,10,10,10)
+robots
+  robot florero
+  variables
+    av : numero
+    ca : numero
+    cosa: numero
+  comenzar
+    cosa := PosAv
+    repetir 5
+      Random(av,1,5)
+      Random(ca,1,9)
+      BloquearEsquina(av,ca)
+      Pos(av,ca)
+      mientras HayFlorEnLaEsquina
+        tomarFlor
+      Pos(cosa,10)
+      LiberarEsquina(av,ca)    
+    mientras HayFlorEnLaBolsa
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      depositarFlor
+      Pos(cosa,10)
+      LiberarEsquina(10,10)
+  fin
+  robot papelero 
+  variables
+    av : numero
+    ca : numero
+    cosa: numero
+  comenzar
+    cosa := PosAv
+    repetir 3
+      Random(av,6,10)
+      Random(ca,1,9)
+      BloquearEsquina(av,ca)
+      Pos(av,ca)
+      mientras HayPapelEnLaEsquina
+        tomarPapel
+      Pos(cosa,10)
+      LiberarEsquina(av,ca)    
+    mientras HayPapelEnLaBolsa
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      depositarPapel
+      Pos(cosa,10)
+      LiberarEsquina(10,10)
+  fin
+variables
+  robot1 : florero
+  robot2: florero
+  robot3 : papelero
+  robot4 : papelero
+comenzar
+  AsignarArea(robot1,areaF)
+  AsignarArea(robot1,punto)
+  AsignarArea(robot1,areaIF)
+  AsignarArea(robot2,areaF)
+  AsignarArea(robot2,punto)
+  AsignarArea(robot2,areaIF)
+  AsignarArea(robot3,areaP)
+  AsignarArea(robot3,areaIP)
+  AsignarArea(robot3,punto)
+  AsignarArea(robot4,areaP)
+  AsignarArea(robot4,areaIP)
+  AsignarArea(robot4,punto)
+  Iniciar(robot1,6,10)
+  Iniciar(robot2,7,10)
+  Iniciar(robot3,8,10)
+  Iniciar(robot4,9,10)
+fin

@@ -1,0 +1,19 @@
+1.	a) numero A188 hezdeximal, mantiza BCS 8bits, exponente 8 bits exceso 128.
+	   A188= 1010 0001 1000 1000 
+	   en decimal es: - 0,1 0100001 *2^10001000 = - 0,1 0100001 *2^8 (136-128) = 2^7 + 2^5 + 2^0 = -161 es el numero decimal
+	
+	b) error absoluto máximo es resolución/2 --> ( 0,1 0000000 * 2^8 - (0, 1 0000001 * 2^8) )/2= 0.5
+
+2.	a) Un circuito combinatorio es la combinación de diferentes compuertas lógicas (and,or,not,etc) las cuales se pueden combinar para obtener un resultado a partir de diferentes entradas
+	b)
+
+3.	a) si, MSX88 representa a una maquina de 2 direcciones porq las instrucciones se escriben de la forma mov AX,BX. Esta indica que el contenido de bx debe ser movido al registo AX
+	b) En una maquina de 1 dirección se utiliza el PC para la próxima instrucción, pero también se tiene un contador (se carga al principio y descarga al final) que ayuda a ir manteniendo el resultado de las direfentes operaciones, al final se debe almacenar dicho resultado
+
+4.	a) En la organización 2 1/2 D tenemos características como: la direccion se divide en 2 partes, hay 2 decodificadores uno para las filas y otro para las columnas de las palabras, los bits de las palabras suelen están en diferentes chips y se debo interconectarlos/buscalos. tiene forma 'cuadrada'
+	b) registros 1KB 1ns, cache 5-20 ns 1MB, memoria principal 60-80 ns varios GB, discos de almacenamiento 10ms decenas de GB
+
+5.500*800 pixeles 15 seg
+
+	a) 500*800= 400.000pixeles cada imagen pesa 400.000 * 1bit= 400.000bits/8 = 50.0000 bytes
+	b) 25*50.000 bytes= 1.250.000 bytes por segundo

@@ -1,0 +1,160 @@
+programa ejer2
+procesos
+  proceso tomarFlores(ES flor:numero)
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      flor:=flor+1
+  fin
+  proceso tomarPapeles(ES papel:numero)
+  comenzar
+    mientras(HayPapelEnLaEsquina)
+      tomarPapel
+      papel:=papel+1
+  fin
+  proceso recorrido (ES flor:numero)
+  variables
+    aux:numero
+  comenzar
+    aux:=5
+    repetir 4
+      tomarFlores(flor)
+      repetir aux
+        mover
+      tomarFlores(flor) 
+      derecha
+      repetir aux
+        mover
+      tomarFlores(flor)
+      aux:=(aux)-1
+      repetir 3
+        derecha
+  fin
+  proceso recorrido2(ES flor:numero)
+  variables
+    aux:numero
+  comenzar
+    aux:=2
+    repetir 4
+      tomarFlores(flor)
+      repetir aux
+        mover
+      tomarFlores(flor)
+      derecha
+      repetir aux
+        mover
+      tomarFlores(flor)
+      aux:=aux+1
+      repetir 3
+        derecha
+  fin
+  proceso recorrido3 (ES papel:numero)
+  variables
+    aux:numero
+  comenzar
+    aux:=5
+    repetir 4
+      tomarPapeles(papel)
+      repetir aux
+        mover
+      tomarPapeles(papel) 
+      derecha
+      derecha
+      derecha
+      repetir aux
+        mover
+      tomarPapeles(papel)
+      aux:=(aux)-1
+      derecha
+  fin
+  proceso recorrido4(ES papel:numero)
+  variables
+    aux:numero
+  comenzar
+    aux:=2
+    repetir 4
+      tomarPapeles(papel)
+      repetir aux
+        mover
+      tomarPapeles(papel)
+      derecha
+      derecha
+      derecha
+      repetir aux
+        mover
+      tomarPapeles(papel)
+      aux:=aux+1
+      derecha
+  fin
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot tipo1
+  variables
+    flor:numero
+    quien:numero
+  comenzar
+    RecibirMensaje(quien,jefe)
+    flor:=0
+    recorrido(flor)
+    mover
+    tomarFlores(flor)
+    derecha
+    BloquearEsquina(15,15)
+    mover
+    tomarFlores(flor)
+    EnviarMensaje(quien,jefe)
+    repetir 2
+      derecha
+    mover
+    LiberarEsquina(15,15)
+    recorrido2(flor)
+    Informar(flor)
+  fin
+  robot tipo2
+  variables
+    papel:numero
+    quien:numero
+  comenzar
+    RecibirMensaje(quien,jefe)
+    papel:=0
+    recorrido3(papel)
+    mover
+    tomarPapeles(papel)
+    derecha
+    derecha
+    derecha
+    BloquearEsquina(15,15)
+    mover
+    tomarPapeles(papel)
+    EnviarMensaje(quien,jefe)
+    repetir 2
+      derecha
+    mover
+    LiberarEsquina(15,15)
+    recorrido4(papel)
+    Informar(papel)
+  fin
+  robot boss
+  variables
+    aux1:numero
+    aux2:numero
+  comenzar
+    EnviarMensaje(1,robot1)
+    EnviarMensaje(2,robot2)
+    RecibirMensaje(aux1,*)
+    RecibirMensaje(aux2,*)
+    Informar(aux1)
+  fin
+variables
+  robot1:tipo1
+  robot2:tipo2
+  jefe:boss
+comenzar
+  AsignarArea(jefe,ciudad)
+  AsignarArea(robot1,ciudad)
+  AsignarArea(robot2,ciudad)
+  Iniciar(jefe,15,1)
+  Iniciar(robot1,1,1)
+  Iniciar(robot2,31,1)
+fin

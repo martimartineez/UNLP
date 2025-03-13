@@ -1,0 +1,18 @@
+1.	a) El mínimo positivo es +0,0001*2^0000 
+	b) El 2,625 --> se escribe como 0,10101 * 2^10010
+
+2. 	a) las 3 funciones lógicas con and, or y not. Las cuales se pueden representar en tablas de verdad, expresiones algebraicas o circuitos de compuertas lógicas. Se suelen combinar entre si para obtener los resultados deseados
+	b) En la suma de productos, se obtienen valores validos a partir de una tabla de verdad, con estos se contruye un circuido de compuertas lógicas donde primero pasan por compuertas and, los resultados de esto a compuertas or y de estos se obtiene el resultado.
+
+3.	a) EL formato de instrucción de una maquina de 3 direcciones es del estilo sum r1,r2,r3. Este ejemplo sumara r2 con r3 y lo guardara en r1.
+	b) en una SUB se buscara en memoria la dirección que tiene PC, se traerá el contenido, se incrementa el PC y se guardara en IR, la UC traducirá la instrucción y vera donde se encuentran los operandos que puede ser en registos o en memoria, los buscara y enviara los datos a la ALU donde se realizara la resta, después se guardara el resultado y actualiza las flags. CMP hará algo similar, internamente compara los números con una resta también, pero no guarda los resultados solo actualiza las flags por ejemplo si la flag de cero es 1 indica que los operadores son iguales.
+
+4.	a)En la jerarquía de memoria los principios indican que en la cima de la pirámide estarán las memorias mas rápidas, pero con poca cantidad memoria y a medida que se baje en la pirámide bajara la velocidad de acceso pero aumentara la cantidad de memoria disponible. por ejemplo en una pirámide desde la cima tenemos: registros (tiempo de acceso 1ns, 1KB espacio),cache (5-20ns, 1MB), memoria principal (60-80ns, varios GB) y discos de almacenamiento (10ms, muchos GB)
+	b)la organización 2 1/2D de memoria semiconductora utiliza 2 decodificadores, porq las líneas verticales (cada bit de las palabras) pueden estar en direfentes chips entonces, a diferencia de la 2D, se necesita un decodificador mas 
+
+5.	100cm * 50cm 100 puntos por centimetro
+	a) (100*100)*(50*100)=10.000 * 5.000=50.000.000 pixeles
+	   50.000.000 * 3bytes= 150.000.000 bytes
+	
+	b) monocromática usa 1bit por pixel --> 50.000.000* 1bit=50.000.000 bits = 6.250.000 bytes (1 imagen monocromatica)
+		150.000.000 bytes/ 6.250.000 bytes = 24

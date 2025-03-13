@@ -1,0 +1,145 @@
+programa parcialito
+procesos
+  proceso recolectar(E id:numero;ES papeles:numero;ES flores:numero)
+  variables
+    aux:numero
+  comenzar
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      flores:= flores +1
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      papeles:= papeles+1
+    EnviarMensaje(id,boss)
+    aux:=papeles + flores
+    EnviarMensaje(aux,boss)
+    repetir aux
+      EnviarMensaje(1,boss)
+  fin
+areas
+  area:AreaPC(45,48,62,69)
+  uno:AreaP(10,10,10,10)
+  dos:AreaP(11,10,11,10)
+  tres:AreaP(12,10,12,10)
+  cuatro:AreaP(13,10,13,10)
+  fis:AreaP(1,1,1,1)
+robots
+  robot recolector
+  variables
+    id:numero
+    papeles:numero
+    flores:numero
+    av:numero
+    ca:numero
+    yoAv:numero
+    yoCa:numero
+    ganador:numero
+  comenzar
+    RecibirMensaje(id,boss)
+    papeles:=0
+    flores:=0
+    yoAv:= PosAv
+    yoCa:= PosCa
+    repetir 5
+      Random(av,45,62)
+      Random(ca,48,69)
+      BloquearEsquina(av,ca)
+      Pos(av,ca)
+      recolectar(id,papeles,flores)
+      Pos(yoAv,yoCa)
+      LiberarEsquina(av,ca)
+    RecibirMensaje(ganador,boss)
+    si ganador = id
+      repetir papeles
+        depositarPapel
+      repetir flores
+        depositarFlor
+  fin
+  robot jefe
+  variables
+    id:numero
+    uno:numero
+    dos:numero
+    tres:numero
+    cuatro:numero
+    aux:numero
+    cant:numero  
+  comenzar
+    EnviarMensaje(1,r1)
+    EnviarMensaje(2,r2)
+    EnviarMensaje(3,r3)
+    EnviarMensaje(4,r4)
+    uno:=0
+    dos:=0
+    tres:=0
+    cuatro:=0
+    repetir 20
+      RecibirMensaje(id,*)
+      si id=1
+        RecibirMensaje(cant,r1)
+        repetir cant
+          RecibirMensaje(aux,r1)
+          uno:=uno + aux
+      sino
+        si id=2
+          RecibirMensaje(cant,r2)
+          repetir cant
+            RecibirMensaje(aux,r2)
+            dos:=dos + aux
+        sino
+          si id=3
+            RecibirMensaje(cant,r3)
+            repetir cant
+              RecibirMensaje(aux,r3)
+              tres:= tres+1
+          sino
+            RecibirMensaje(cant,r4)
+            repetir cant
+              RecibirMensaje(aux,r4)
+              cuatro:=cuatro + aux
+    si (uno > dos)&(uno > tres)&(uno > cuatro)
+      EnviarMensaje(1,r1)
+      EnviarMensaje(1,r2)
+      EnviarMensaje(1,r3)
+      EnviarMensaje(1,r4)
+    sino
+      si (dos > uno)&(dos > tres)&(dos > cuatro)
+        EnviarMensaje(1,r1)
+        EnviarMensaje(1,r2)
+        EnviarMensaje(1,r3)
+        EnviarMensaje(1,r4)
+      sino
+        si (tres > uno)&(tres > dos)&(tres > cuatro)
+          EnviarMensaje(1,r1)
+          EnviarMensaje(1,r2)
+          EnviarMensaje(1,r3)
+          EnviarMensaje(1,r4)
+        sino
+          si (cuatro > uno)&(cuatro > dos)&(cuatro > tres)
+            EnviarMensaje(1,r1)
+            EnviarMensaje(1,r2)
+            EnviarMensaje(1,r3)
+            EnviarMensaje(1,r4)
+  fin
+variables
+  r1:recolector
+  r2:recolector
+  r3:recolector
+  r4:recolector
+  boss:jefe
+comenzar
+  AsignarArea(r1,uno)
+  AsignarArea(r1,area)
+  AsignarArea(r2,dos)
+  AsignarArea(r2,area)
+  AsignarArea(r3,tres)
+  AsignarArea(r3,area)
+  AsignarArea(r4,cuatro)
+  AsignarArea(r4,area)
+  AsignarArea(boss,fis)
+  Iniciar(r1,10,10)
+  Iniciar(r2,11,10)
+  Iniciar(r3,12,10)
+  Iniciar(r4,13,10)
+  Iniciar(boss,1,1)
+fin

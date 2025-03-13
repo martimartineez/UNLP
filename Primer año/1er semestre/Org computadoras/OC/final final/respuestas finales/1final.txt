@@ -1,0 +1,17 @@
+1. 	a) El numero mas chico es +0,00001 * 2^0000
+	b)No se puede representar exactamente, el mas cercano seria el 31 (+ 0,11111 * 2^1101) 
+
+2. 	a) las 3 formas que se pueden utilizar para representar una funcion lógica son: las expresiones matemáticas, las tablas de verdad o los circuitos lógicos combinatorios 
+	b)el metodo de ciruitos logicos combinacionales denominado "suma de producto", es la representacion de combinar compuertas logicas and en entradas validas, que se pueden obtener con una tabla de verdad, y las salidas de estas con compuertas OR para obtener el resultado final. 
+
+3. 	a)Con el formato de instrucción se representan el comportamiento que el programador quiere que tenga la pc al realizar ciertas tareas//// El formato de instrucción representa el comportamiento que el programador desea que la computadora tenga al realizar ciertas tareas. Específicamente, el formato de instrucción define cómo se estructuran las instrucciones que el procesador debe ejecutar, incluyendo los códigos de operación (opcodes) y los operandos necesarios para realizar operaciones específicas.
+
+	b)En un salto incondicional, se busca la instrucción en memoriam, con la dirección contenida en PC, se trae la instrucción se traduce, se incrementa el PC, y se determina ahí mismo a que dirección se debe saltar,  se coloca la dirección del jump en el pc  y finalmente se ejecuta el salto 
+
+4.	a)los valores típicos son registros= 1ns, cache 5-20ns, memoria principal 60-80ns, discos 10ms
+	b)La organización 2 1/2D de memoria semiconductora requiere refesco porq los capacitores que almacenan la información se descargan y para no perder la información se realiza este refresco 
+
+5. 50cm * 100cm 100 puntos por centimetro.
+
+	a) (100*50)*(100*100)= 50.000.000 * 3bytes(24bits)= 150.000.000 bytes 
+	b) EN MONOCROMATICO 50.000.000 * 1 bit= 50.000.000 bits --> 6.250.000 bytes --> memoria total/memoria cada imagen monocre(150.000.000 bytes/6.250.000 bytes= 24.) 24 imágenes entran

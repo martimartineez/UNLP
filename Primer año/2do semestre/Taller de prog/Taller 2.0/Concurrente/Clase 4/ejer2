@@ -1,0 +1,111 @@
+programa ejer2
+procesos
+  proceso evaluar(ES papeles:numero;E av:numero;E ca:numero)
+  comenzar
+    si papeles = 5
+      BloquearEsquina(50,50)
+      Pos(50,50)
+      repetir papeles
+        depositarPapel
+        papeles:=papeles - 1
+      Pos(av,ca)
+      LiberarEsquina(50,50)     
+  fin
+  proceso tomarPapeles(ES papeles:numero;E av:numero;E ca:numero)
+  comenzar
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      papeles:=papeles + 1
+      evaluar(papeles,av,ca)
+  fin
+  proceso recorrer(ES papeles:numero;E av:numero;E ca:numero)
+  comenzar
+    repetir 99
+      mover
+      tomarPapeles(papeles,av,ca)     
+  fin
+  proceso juntarPapeles(E papeles:numero;ES cant:numero)
+  variables
+    cant1:numero
+    aux:numero
+  comenzar
+    cant1:=0
+    mientras HayPapelEnLaEsquina
+      tomarPapel
+      cant1:= cant1 + 1
+    si cant1 > 0
+      si cant1 < papeles 
+        repetir cant1
+          depositarPapel
+          cant:= cant + 1
+      sino
+        si cant1 = papeles
+          cant:= 0
+        sino
+          cant:= 0
+          aux:= cant1 - papeles     
+          repetir aux
+            depositarPapel 
+    sino
+      si cant1 = 0
+        cant:= cant + 1
+  fin
+areas
+  areaR1:AreaP(5,1,5,100)
+  areaR2:AreaP(10,1,10,100)
+  areaR3:AreaP(11,1,11,1)
+  areaR4:AreaP(12,1,12,1)
+  esquina:AreaC(50,50,50,50)
+robots
+  robot productor
+  variables
+    papeles:numero
+    av:numero
+    ca:numero
+  comenzar
+    papeles:=0
+    av:= PosAv
+    ca:= PosCa
+    tomarPapeles(papeles,av,ca)
+    recorrer(papeles,av,ca)
+  fin
+  robot consumidor
+  variables
+    papeles:numero
+    av:numero
+    ca:numero
+    cant:numero
+  comenzar
+    cant:=0
+    av:= PosAv
+    ca:= PosCa
+    mientras (cant < 8)
+      Random(papeles,2,5)
+      BloquearEsquina(50,50)
+      Pos(50,50)
+      juntarPapeles(papeles,cant)
+      Pos(av,ca)
+      LiberarEsquina(50,50)
+      si cant=0
+        mientras HayPapelEnLaBolsa
+          depositarPapel
+  fin
+variables
+  r1:productor
+  r2:productor
+  r3:consumidor
+  r4:consumidor
+comenzar
+  AsignarArea(r1,areaR1)
+  AsignarArea(r1,esquina)
+  AsignarArea(r2,areaR2)
+  AsignarArea(r2,esquina)
+  AsignarArea(r3,areaR3)
+  AsignarArea(r3,esquina)
+  AsignarArea(r4,areaR4)
+  AsignarArea(r4,esquina)
+  Iniciar(r1,5,1)
+  Iniciar(r2,10,1)
+  Iniciar(r3,11,1)
+  Iniciar(r4,12,1)
+fin

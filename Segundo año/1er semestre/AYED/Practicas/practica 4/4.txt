@@ -1,0 +1,43 @@
+a. 3^n es de O(2^n)
+	
+	es O(2^n)?
+
+	3^n<=c* 2^n
+	c=3  n'=0
+	
+	pero en n'=3 no se cumple (3^3<= 3*2^3 --> 27<=24)
+
+b. n+ log2 (n) es de O(n)
+	es O(n)?
+
+	n <= c1*n
+	
+	c=1 n'=1
+
+	log2 (n) <= c2 *n
+	c=1 n''= 2 
+
+	
+	n+ log2 (n)<= (c1+c2)*n
+	
+	t(n)<= (c1+c2)*n' para todo n>= n', con c=2 y n'=2
+
+c. n^1/2 + 10^20 es de O (n^1/2)
+	
+	 O (n^1/2)?
+	
+	n^1/2=c*n^1/2 para todo n>=n'
+
+	n^1/2 <= c* n^1/2 
+	c=1 n'= 0 
+
+	10^20 <= c* n^1/2 para todo n>=n'
+	c= 10^20 n=1
+
+	t(n)= c * n^1/2, para todo n>= n', con c=10^20+1 con n'= 1
+	
+
+
+	
+	
+	

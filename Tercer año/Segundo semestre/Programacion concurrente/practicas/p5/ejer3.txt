@@ -1,0 +1,85 @@
+procedure sistema is
+	task central is
+		entry proceso1(dato1: in integer);
+		entry proceso2(dato2: in integer);
+		entry finTiempo();
+	end central;
+	
+	task contador is
+		entry empezar();
+	end contador;	
+
+	task periferico1;
+	task periferico2;
+
+	task body central is
+	begin
+
+		accept proceso1(dato: in integer);
+		
+		loop 
+			select
+				accept proceso1(dato1: in integer);
+			
+			or
+				accept proceso2(dato2: in integer) do
+					recibir:=false;
+					while (recibir=false) loop
+						select 
+							when(finTiempo'count = 0) =>
+								accept proceso2(dato2: in integer);
+						or
+							accept finTiempo(); do
+								recibir=true;
+							end finTiempo;
+						end select;
+					end loop;
+				end proceso2;
+			end select;
+		end loop;
+	end central;
+	
+ 	Task body contador is
+    	begin
+        	loop
+            	accept empezar();
+            	delay(180);
+            	central.finTiempo();
+        	end loop;
+    	end contador;
+
+	task body proceso1 is
+	dato: integer;
+	begin
+		loop
+			select
+				central.proceso1(dato);
+			or delay 120
+				null;
+			end select;
+		end loop;
+	end proceso1;
+
+	task body proceso2 is
+	dato:integer;
+	begin
+		loop
+			select 
+				central.proceso2(dato);
+			else
+				delay (60);
+			end select;
+		end loop;
+	end proceso2;
+
+begin
+
+ null;
+
+end sistema;
+			
+	
+
+			
+
+	

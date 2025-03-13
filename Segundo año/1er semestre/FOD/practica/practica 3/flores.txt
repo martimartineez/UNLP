@@ -1,0 +1,4 @@
+ nombre margarita codigo 12
+ nombre rosa codigo 22
+ nombre girasol codigo 44
+ nombre anales codigo 69

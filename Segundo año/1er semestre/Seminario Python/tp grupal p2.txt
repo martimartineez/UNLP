@@ -1,0 +1,43 @@
+tp grupal p2
+
+p1: descripción de como funciona la cosa xd
+
+p2: 3 widgets de lagos(marcas de lagos, 2 mas de info) y aeropuertos(marcas de aero, diferente color según elevation, 2 mas utiles)
+
+p3: juego, ver si esta registrado o no, generar 5 preguntas random dependiendo la dificultad y tematica, se almacena preguntas y datos en archivos, pasar a p5
+
+p4: formulario registro 
+
+p5: calculo de puntaje final, muestra de ranking y datos de ultima partida
+
+p6: estadísticas y datos de las partidas
+
+1. Gráfico de torta de usuarios que hayan jugado alguna vez el juego agrupados por
+género.
+
+2. Gráfico de torta con porcentaje de partidas que tienen una puntuación superior a la
+media (promedio de calificaciones).
+
+3. Gráfico de barras que para cada día de la semana muestre la cantidad de partidas
+realizadas.
+
+4. Promedio de preguntas acertadas mensuales entre un rango de dos fechas
+insertadas en dos inputs.
+
+5. Top 10 de usuarios con mayor cantidad de puntos acumulados entre un rango de
+dos fechas insertadas por input.
+
+6. Ordenar los datasets por dificultad donde primero se debe ubicar el dataset que
+tiene mayor número de errores en las respuestas.
+
+7. Gráfico de líneas que permita seleccionar dos usuarios para compararlos. Al
+seleccionarlos se debe mostrar la evolución de su puntaje a lo largo del tiempo.
+
+8. Listar para cada género cuál es la temática en la cual demuestra mayor
+conocimiento.
+
+9. Listar cada dificultad de juego junto con el puntaje promedio obtenido en cada una y
+con la cantidad de veces que fue elegida.
+
+10. Listado de usuarios en racha. Lista los usuarios que registran una partida con un
+puntaje mayor a cero en todos los días durante los últimos 7 días.

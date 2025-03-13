@@ -1,0 +1,22 @@
+1.	a) + 0,1 1000001 *2^10110110
+	   + 0,1 1000001 *2^54
+	   el primero 1 después de la coma esta implicito, pero lo coloco para calcular
+	   2^53 + 2^52 + 2^46--> ese seria el numero
+	b)el error absoluto es el menor representación div 2: 2^46/2 en este caso es 2^45
+
+2.	a)Una puerta lógica es una operación que se puede aplicar a 2 entradas binarias, las cuales retornaran un resultado, pueden ser and(solo es 1 si ambas entradas son 1), or(solo es 0 si ambos son 0) o xor(si esta en 1cambia el valor de la entrada ) o todas estas negadas. Dependiendo que se requiera se pueden conbinar entre si. El curcuito logico secuencial Biestable es uno de los flipflop que se usan para almacenar un estado binario interno. Este en particular puede ser sincronico o asincronico. Por ejemplo el asincronico depende de las entradas de R o S, si R es 1, se resetea el estado interno a 0, y si S es 1 se setea el estado interno en 1. La tabla:
+	s/r/Qn+1 
+	0/0/Qn
+	1/0/1
+	0/1/0
+	1/1/prohibido
+
+3.	a) Un ciclo de instrauccion es la secuencia de pasos que se suelen dar para realizar una diferentes tareas, generalmente se busca una direccion de instruccion de memoria, se almacena en IR, la UC la traduce, se realiza la iaccion y se guarda algun resultado, Dependiendo de la tarea estos pasos pueden variar ligeramente.
+	b) El modo de direccionamiento indirecto via registro con desplazamiento, ocurre cuando al obtener una instruccion de memoria esta tambien contiene informacion como un campo de desplazamiento y el registro que contiene una direccion, con la cual se le suma el desplazamiento y obteniendo la direccion efectiva
+
+4.	a)la organizacion 2D tiene como carazteristica que suelen tener una forma larga y estrecha ocupa mucha superficie, hay mas probabilidad de error y mas complejidad de decodificar que en 2 1/2 D esto porq suelen contener palabras, los bits suelen estar todos en un mismo chip, este cuenta con un decodificador de las lineas horizontales que se conceta al bus de dirreciones, a su vez las columnas se conectan bit a bit con la salida y al bus de datos, tambien las filas se conectan a memoria
+	b) jeje
+	c) los valores tipicos de memoria y velocidad acceso son, registros 1KB 1nm, cache 1MB 5-20ns, memoria principal varios GB 60-80ns, discos de almancenamiento cientos de GB 10ms
+
+5.	a)suponiendo que por segundo se muestran 30 imagenes --> 800 * 500 * 1bit= 400.000 bits= 50.000 bytes cada imagen, 30*50.000 bytes * 200(duracion)= 300.000.000bytes para todo el video.
+	b) 25* 50.000= 1.250.000 bytes/seg 

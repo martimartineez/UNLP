@@ -1,0 +1,36 @@
+punto 1:
+
+b.
+ N = (M-1) * A + M *B + C, donde N es el tamaño del nodo (en bytes), A es el tamaño de un registro
+(en bytes), B es el tamaño de cada enlace a un hijo y C es el tamaño que ocupa
+el campo referido a la cantidad de claves.
+
+b. N = (M-1) * A + M *B + C 
+   512= ((M-1) * 64) + (M * 4) + 4
+   512= 64M-64 + 4M +4
+   508= 64M-64 +4M
+   572=68M
+   572/68=M
+   M=8(8,4)
+   
+
+c. ¿Qué impacto tiene sobre el valor de M organizar el archivo con toda la
+información de los alumnos como un árbol B? la cantidad de accesos? xd
+
+d. ¿Qué dato seleccionaría como clave de identificación para organizar los
+elementos (alumnos) en el árbol B? ¿Hay más de una opción? EL dni o legajo
+
+e. Describa el proceso de búsqueda de un alumno por el criterio de ordenamiento
+especificado en el punto previo. ¿Cuántas lecturas de nodos se necesitan para
+encontrar un alumno por su clave de identificación en el peor y en el mejor de
+los casos? ¿Cuáles serían estos casos? 
+
+mejor casi 1 solo, porq es la raiz
+
+pero caso seria con el mayor dni existente o el menor, osea el valor mas alejado de la raiz 
+
+
+
+
+
+	
