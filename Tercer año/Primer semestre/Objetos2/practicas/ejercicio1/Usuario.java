@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Usuario {
 
-	private List<Tweet> tweets;
+	private List<Itweet> tweets;
 	private String screenName;
 	
 	public Usuario(String screenName) {
-		this.tweets= new ArrayList<Tweet>();
+		this.tweets= new ArrayList<Itweet>();
 		this.screenName = screenName;
 	}
 	
@@ -26,7 +26,7 @@ public class Usuario {
 		
 	}
 	public void reTweetear(Tweet tw) {
-		Tweet aux= new Tweet(tw);
+		Retweet aux= new Retweet(tw);
 		this.tweets.add(aux);
 	}
 	
