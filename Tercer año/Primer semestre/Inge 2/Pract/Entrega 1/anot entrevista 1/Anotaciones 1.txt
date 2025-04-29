@@ -1,0 +1,37 @@
+Haii lindos! C:
+
+
+Nombre de emprendimiento:	ALQUIL.AR
+
+Como es/Que se quiere:
+
+-Se Alquilan diferentes herramientas
+-Se utiliza Excel para todo, varios archivos de Excel y un pendrive para almacenarlos. Se quiere ACTUALIZAR este sistema
+-Hacer una web
+-Alquiler de mínimo 1 día
+-Les gastaría expandirse
+-Pagos SOLO digitales
+-Se puede reservar herramientas, por ejemplo si no están disponibles (PREGUNTAR SI SE PIDE UN PORCENTAJE DE DINERO, LA TOTALIDAD O COMO LO QUIEREN)
+-Del cliente se conoce nombre,dni,mail (PREGUNTAR POR USUARIO NAME?)
+-Login necesario, con seguridad (PREGUNTAR POR LOGIN DE OTROS ACTORES E INTERACCION CON EL SISTEMA... QUE VEN)
+-Precio ajustado a la inflación
+-Varias publicaciones de maquinas en vez de stock, mostrar en que lugar físico esta 
+-Si no esta disponible recomendarle el sitio físico donde si esta disponible
+-SE QUIEREN ESTADISTICAS (mas alquiladas, ganancias, estado de maquinas, etc)(SE PUEDE PREGUNTAR MAS SOBRE ESTO)
+-Registro se hace en persona y por un empleado
+-Sistema de puntuaciones 5 estrellas a clientes, cobrarle mas a malos clientes (Ejemplo dado se le bajan las estrellas por no cumplir con plazo, dañar maquina,etc)
+-Llevar control del estado de maquinas (SI no están rotas) antes de volverla a habilitar en la web
+-Cancelación de reserva tanto de empleados como de clientes (PREGUNTAR SI HAY CONDICION PARA CANCELAR NO SE EJEMP 1 DIA ANTES DE LA FECHA PACTADA)
+-Compensación con cupones (Esto lo dijo cuando la empresa cancela el alquiler, compensar al que la había reservado) (PREGUNTAR SI HAY BENEFICIO A BUENOS CLIENTES)
+-Mostrar medios de contacto, num teléfono, dirección(mapa)(dijo algo asi como mostrar las sucursales mas cercanas)(PREGUNTAR SI AHORA TIENEN REDES SOCIALES O QUE ONDA)
+
+
+
+Cosas que nos dijeron que deberíamos preguntar la prox:
+
+-Preguntar sobre colores, login de los demás, que ven y estética.
+-Como se manejan los datos, creación, actualización, eliminación de info. (Dio el ejemplo de "El empleado puede eliminar/cambiar que cosas o que otras no?")
+-BASICAMENTE FUNCIONALIDAD
+-Otras que se nos ocurran!!! 
+
+Colo puto

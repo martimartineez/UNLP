@@ -1,0 +1,18 @@
+preguntamos sobre todo por funcionalidades del sistema
+ALGUNAS COSAS QUE INTERPRETE
+
+- se aclaro que también se puede usar la pagina como "visitante"
+- quieren colores celeste y amarillo y blanco(contraste) (bandera arg)
+- mismos datos de registro entre cientes, empleados y gerentes
+- inicio de sesión mas seguro en clientes
+- todos inician con mail
+- gerente puede ver estadísticas, carga empleados, modificar datos, eliminar
+- empleado solo alta de cliente (cosas relacionadas al cliente)
+- puntaje (escuchar el audio xdxd)
+- gerente crea publicaciones y las puede modificar
+- empleado cancela: avisar por mail, devolver 100% monto
+- cliente cancela(escuchar audio xdd)
+- estadísticas (montos ganancias, maquinaria mas alquilada, top usiarios)
+- solo gerentes ven ESTADISTICAS
+- se puede elegir un periodo de fechas para ver estadísticas dentro de el
+

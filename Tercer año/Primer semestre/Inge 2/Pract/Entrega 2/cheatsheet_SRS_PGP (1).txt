@@ -1,0 +1,140 @@
+Especificación de Requisitos de Software (SRS)
+
+1) Introducción
+
+Propósito y alcance:
+
+Este documento tiene como propósito definir los requisitos del software, ya sean funcionales o no funcionales, para el desarrollo del proyecto “Nombre del Proyecto”, brindando así como producto final un sistema de organización centralizada para servicios que provee la entidad y otros destinados a la comunidad.
+
+Este documento está dirigido a los propietarios de la entidad "Nombre de Proyecto" y a los desarrolladores de este sistema. Se presenta como una base fundamental para el equipo de desarrollo.
+
+El sistema, que lleva el mismo nombre que la entidad, se encargará de: "Lista de funcionalidades".
+
+c.	Referencias
+
+Tabla con formato:
+
+Nombre documento	Fecha	Autor
+
+Entrevistas, Epicas, Cuestionario
+
+
+2) Descripción general
+
+b.	Perspectiva del producto
+
+El sistema es una Aplicación web independiente, ya que no es parte de un sistema mayor. 
+
+En cuanto a conexiones con sistemas externos se vincula con los servicios ... (ej. Mercado Pago, brindar descripción de qué es y para qué)
+
+c.	Características de los usuarios
+
+En el sistema se encuentran los siguientes roles de usuario en conjunto con sus actividades permitidas:
+
+Listarlas
+
+3) Requisitos del Software
+
+Requisitos de Interfaz
+
+a.	Interfaz de Usuario 
+
+La interfaz de usuario es la de una aplicación web. Dar toda descripción de la web que se pidio o tienen pensado realizar.
+
+b.	Interfaces de Software
+
+El sistema interactúa con los servicios de pago Mercado Pago para ...
+
+c.	Interfaces de Hardware
+
+N/A.
+
+Requisitos funcionales
+
+Listar HUs posibles (solo su ID), separarlas segun su épica
+
+Requisitos no funcionales
+
+a.	Fiabilidad
+
+b.	Mantenibilidad
+
+c.	Multiplataforma
+
+d.	Seguridad
+
+e.	Rendimiento
+
+etc
+
+===============================================================================
+
+Plan de Gestión de Proyecto (PGP)
+
+1) Introducción
+a. Propósito y alcance
+
+Este documento tiene como propósito ser el marco del plan de realización del proyecto “Nombre del Proyecto” y los recursos necesarios para llevarlo a cabo. En este se especifica los plazos, roles, responsabilidades, recursos y presupuesto estimado para la realización exitosa de todos los objetivos del proyecto teniendo en cuenta como parte fundamental los riesgos presentes en este.
+
+Este documento se encuentra dirigido a las diferentes partes interesadas en el proyecto, como lo son el equipo de desarrollo y los dueños de la entidad.
+
+El proyecto “Nombre del Proyecto” es una aplicación web la cual servirá como servicio de "listar funcionalidades".
+
+
+c.	Referencias
+
+Sus documentos (Entrevistas hasta SRS inclusive)
+Páginas de sueldos
+Páginas de BBDD (si son pagas)
+Páginas de hosting (si piensan usarlo)
+Cotización del dolar
+
+2) Planes generales
+
+a.	Entregables del proyecto
+
+Fijarse el calendario de entregas, todo ello es un entregable
+Hacer tabla con "Entregable - Fecha"
+
+b.	Calendario y resumen del presupuesto
+Hacer tabla con "Etapa	Accion/es	Fecha"
+Ejemplo:
+Elicitacion de Req      Entrevista 1 y 2        xx/03/202x
+Sprint 1
+Sprint 2
+Sprint 3
+
+Tener en cuenta como funciona la metodología Scrum para la planificación.
+
+Definir presupuesto en base a esto y todo lo anterior.
+
+3) Presupuesto
+
+a.	Principales actividades del proyecto
+
+El proyecto consiste en el desarrollo de una aplicación web desde cero para la [rubro] "Nombre del Proyecto", para lo cual se requieren las siguientes actividades: 
+
+1.	Elicitar requerimientos:
+2.	Especificar requerimientos: 
+3.	Diseño conceptual: 
+4.	Desarrollo: listar los distintos tipos de sistemas
+5.	Despliegue efectivo: 
+6.	Mantenimiento: 
+
+b.	Asignación de esfuerzo
+
+Actividad	Responsable/s (cantidad)	Esfuerzo unitario (hs)	Esfuerzo total (hs)
+
+lo que listaron antes
+
+Total de horas entre todas las actividades: 
+
+4) Riesgos
+
+Tabla con este formato, descripción de la métrica que se use como impacto
+Riesgo: 
+Probabilidad: 
+Impacto: 
+Medidas mitigadoras: 
+Plan de contingencia: 
+Responsable:
