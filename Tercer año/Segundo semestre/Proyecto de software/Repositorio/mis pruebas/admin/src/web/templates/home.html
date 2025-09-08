@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio - Mi Proyecto Flask{% endblock %}
+
+{% block content %}
+    <h2>Página de inicio</h2>
+    <p>¡Bienvenido a la página principal de tu proyecto Flask!</p>
+
+    <a href="{{ url_for('about') }}">Ir a About</a>
+{% endblock %}

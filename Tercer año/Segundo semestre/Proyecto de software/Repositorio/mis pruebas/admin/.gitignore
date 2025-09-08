@@ -1,0 +1,41 @@
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de logs y bases de datos
+*.log
+*.sqlite3
+*.db
+
+# Configuración de VS Code
+.vscode/
+
+# Archivos de Poetry
+poetry.lock
+
+# Archivos de pruebas y cobertura
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+.cache/
+nosetests.xml
+coverage.xml
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de Jupyter
+.ipynb_checkpoints/
+
+# Archivos de distribución
+dist/
